@@ -23,7 +23,7 @@
 </style>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted, Ref } from "vue";
+import { defineComponent, ref, onMounted, Ref, PropType } from "vue";
 
 export type DataType = {
   canvasElement: Ref<HTMLCanvasElement>;
@@ -35,14 +35,44 @@ export type DataType = {
 
 var timerId: number;
 
+export interface VoidFunction {
+  (): void;
+}
+
+export interface DesigningMathCallbackFunction {
+  (
+    ctx: CanvasRenderingContext2D,
+    screenWidth: number,
+    screenHeight: number,
+    curYubiX: number,
+    curYubiY: number,
+    yubiTouched: boolean
+  ): void;
+}
+
 export default defineComponent({
   name: "designingmath",
   props: {
-    setupFunc: Function,
-    loopFunc: Function,
-    touchstartFunc: Function,
-    touchMoveFunc: Function,
-    touchEndFunc: Function,
+    setupFunc: {
+      type: Function as PropType<VoidFunction>,
+      required: true,
+    },
+    loopFunc: {
+      type: Function as PropType<DesigningMathCallbackFunction>,
+      required: true,
+    },
+    touchstartFunc: {
+      type: Function as PropType<DesigningMathCallbackFunction>,
+      required: true,
+    },
+    touchMoveFunc: {
+      type: Function as PropType<DesigningMathCallbackFunction>,
+      required: true,
+    },
+    touchEndFunc: {
+      type: Function as PropType<DesigningMathCallbackFunction>,
+      required: true,
+    },
   },
   methods: {
     screenWidth(): number {
