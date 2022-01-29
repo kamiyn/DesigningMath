@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>0.vue 関数テンプレート</p>
+    <p>Chapter 1 1-2 基礎描画</p>
     <designingmath
       :setupFunc="setupFunc"
       :loopFunc="loopFunc"
@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-/* http://localhost:3000/chapter01/0 */
+/* http://localhost:3000/chapter01/2*/
 import { defineComponent } from "vue";
 import designingmath from "@/components/designingmath.vue";
 
@@ -20,6 +20,7 @@ export default defineComponent({
   components: {
     designingmath,
   },
+  setup() {},
   methods: {
     setupFunc(
       ctx: CanvasRenderingContext2D,
@@ -30,6 +31,9 @@ export default defineComponent({
       yubiTouched: boolean
     ) {
       console.log("setupFunc");
+      ctx.moveTo(200, 200);
+      ctx.lineTo(800, 900);
+      ctx.stroke();
     },
     loopFunc(
       ctx: CanvasRenderingContext2D,

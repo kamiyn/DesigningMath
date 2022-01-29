@@ -22,7 +22,13 @@ export default defineComponent({
   },
   setup() {},
   methods: {
-    setupFunc() {
+    setupFunc(
+      ctx: CanvasRenderingContext2D,
+      screenWidth: number,
+      screenHeight: number,
+      curYubiX: number,
+      curYubiY: number,
+      yubiTouched: boolean) {
       console.log("setupFunc");
     },
     loopFunc(

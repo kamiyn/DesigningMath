@@ -35,10 +35,6 @@ export type DataType = {
 
 var timerId: number;
 
-export interface VoidFunction {
-  (): void;
-}
-
 export interface DesigningMathCallbackFunction {
   (
     ctx: CanvasRenderingContext2D,
@@ -54,7 +50,7 @@ export default defineComponent({
   name: "designingmath",
   props: {
     setupFunc: {
-      type: Function as PropType<VoidFunction>,
+      type: Function as PropType<DesigningMathCallbackFunction>,
       required: true,
     },
     loopFunc: {
@@ -187,7 +183,14 @@ export default defineComponent({
     this.curYubiX = this.screenWidth() / 2;
     this.curYubiY = this.screenHeight() / 2;
     if (this.setupFunc) {
-      this.setupFunc();
+      this.setupFunc(
+        this.getCtx(),
+        this.screenWidth(),
+        this.screenHeight(),
+        this.curYubiX,
+        this.curYubiY,
+        this.yubiTouched
+      );
     }
     if (this.loopFunc) {
       this.timerId = setInterval(() => {

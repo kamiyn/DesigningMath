@@ -8,4 +8,8 @@ http://www.bnn.co.jp/books/11410/
 ## nuxt3-app フォルダ について
 
 Nuxt3 https://v3.nuxtjs.org/
-手習いもかねて DesigniningMath を移植したものです
+手習いもかねて DesigniningMath を移植したものです。
+
+関数に型指定がされていることによりコード補完の支援を得ることができます。
+
+![コード補完の様子](vscodeCodeCompletion.png "コード補完の様子")
