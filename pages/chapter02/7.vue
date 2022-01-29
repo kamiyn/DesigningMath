@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>Chapter 2 2-6 文字を描く</p>
+    <p>Chapter 2 2-7 動きの表現、指の位置</p>
     <designingmath
       :setupFunc="setupFunc"
       :loopFunc="loopFunc"
@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-/* http://localhost:3000/chapter02/6 */
+/* http://localhost:3000/chapter02/7 */
 import { defineComponent } from "vue";
 import designingmath from "@/components/designingmath.vue";
 
@@ -31,23 +31,6 @@ export default defineComponent({
       yubiTouched: boolean
     ) {
       console.log("setupFunc");
-      ctx.fillText("Designing Math.", screenWidth / 2, 200);
-      ctx.strokeStyle = "black";
-      ctx.font = "60px Serif";
-      ctx.textAlign = "right";
-      ctx.strokeText("Designing Math.", screenWidth / 2, 400);
-
-      ctx.fillStyle = "grey";
-      ctx.strokeStyle = "red";
-      ctx.lineWidth = 4;
-      ctx.font = "80px Helvetica";
-      ctx.textAlign = "center";
-      // 枠線を描いてから塗る
-      ctx.strokeText("Designing Math.", screenWidth / 2, 600);
-      ctx.fillText("Designing Math.", screenWidth / 2, 600);
-      // 塗ってから枠線を描画
-      ctx.fillText("Designing Math.", screenWidth / 2, 800);
-      ctx.strokeText("Designing Math.", screenWidth / 2, 800);
     },
     loopFunc(
       ctx: CanvasRenderingContext2D,
@@ -58,6 +41,10 @@ export default defineComponent({
       yubiTouched: boolean
     ) {
       console.log("loopFunc");
+      ctx.clearRect(0, 0, screenWidth, screenHeight); // 画面全体を最初に全部消す
+      ctx.beginPath();
+      ctx.arc(curYubiX, curYubiY, 200, 0, Math.PI*2);
+      ctx.stroke(); 
     },
     touchOrMouseStartFunc(
       ctx: CanvasRenderingContext2D,
