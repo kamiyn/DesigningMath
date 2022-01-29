@@ -51,23 +51,18 @@ export default defineComponent({
   props: {
     setupFunc: {
       type: Function as PropType<DesigningMathCallbackFunction>,
-      required: true,
     },
     loopFunc: {
       type: Function as PropType<DesigningMathCallbackFunction>,
-      required: true,
     },
-    touchstartFunc: {
+    touchOrMouseStartFunc: {
       type: Function as PropType<DesigningMathCallbackFunction>,
-      required: true,
     },
-    touchMoveFunc: {
+    touchOrMouseMoveFunc: {
       type: Function as PropType<DesigningMathCallbackFunction>,
-      required: true,
     },
-    touchEndFunc: {
+    touchOrMouseEndFunc: {
       type: Function as PropType<DesigningMathCallbackFunction>,
-      required: true,
     },
   },
   methods: {
@@ -91,8 +86,8 @@ export default defineComponent({
     doTouchstart(evt) {
       this.updateTouchPosition(evt);
       this.yubiTouched = true;
-      if (this.touchStartFunc) {
-        this.touchStartFunc(
+      if (this.touchOrMouseStartFunc) {
+        this.touchOrMouseStartFunc(
           this.getCtx(),
           this.screenWidth(),
           this.screenHeight(),
@@ -104,8 +99,8 @@ export default defineComponent({
     },
     doTouchmove(evt) {
       this.updateTouchPosition(evt);
-      if (this.touchMoveFunc) {
-        this.touchMoveFunc(
+      if (this.touchOrMouseMoveFunc) {
+        this.touchOrMouseMoveFunc(
           this.getCtx(),
           this.screenWidth(),
           this.screenHeight(),
@@ -118,8 +113,8 @@ export default defineComponent({
     doTouchend(evt) {
       this.updateTouchPosition(evt);
       this.yubiTouched = false;
-      if (this.touchEndFunc) {
-        this.touchEndFunc(
+      if (this.touchOrMouseEndFunc) {
+        this.touchOrMouseEndFunc(
           this.getCtx(),
           this.screenWidth(),
           this.screenHeight(),
@@ -138,8 +133,8 @@ export default defineComponent({
     doMousedown(evt) {
       this.updateMousePosition(evt);
       this.yubiTouched = true;
-      if (this.touchStartFunc) {
-        this.touchStartFunc(
+      if (this.touchOrMouseStartFunc) {
+        this.touchOrMouseStartFunc(
           this.getCtx(),
           this.screenWidth(),
           this.screenHeight(),
@@ -151,8 +146,8 @@ export default defineComponent({
     },
     doMousemove(evt) {
       this.updateMousePosition(evt);
-      if (this.touchMoveFunc) {
-        this.touchMoveFunc(
+      if (this.touchOrMouseMoveFunc) {
+        this.touchOrMouseMoveFunc(
           this.getCtx(),
           this.screenWidth(),
           this.screenHeight(),
@@ -165,8 +160,8 @@ export default defineComponent({
     doMouseup(evt) {
       this.updateMousePosition(evt);
       this.yubiTouched = false;
-      if (this.touchEndFunc) {
-        this.touchEndFunc(
+      if (this.touchOrMouseEndFunc) {
+        this.touchOrMouseEndFunc(
           this.getCtx(),
           this.screenWidth(),
           this.screenHeight(),

@@ -4,15 +4,15 @@
     <designingmath
       :setupFunc="setupFunc"
       :loopFunc="loopFunc"
-      :touchstartFunc="touchStartFunc"
-      :touchEndFunc="touchEndFunc"
-      :touchMoveFunc="touchMoveFunc"
+      :touchOrMouseStartFunc="touchOrMouseStartFunc"
+      :touchOrMouseEndFunc="touchOrMouseEndFunc"
+      :touchOrMouseMoveFunc="touchOrMouseMoveFunc"
     />
   </div>
 </template>
 
 <script lang="ts">
-/* http://localhost:3000/chapter01/1*/
+/* http://localhost:3000/chapter01/1 */
 import { defineComponent } from "vue";
 import designingmath from "@/components/designingmath.vue";
 
@@ -44,7 +44,7 @@ export default defineComponent({
       ctx.arc(curYubiX, curYubiY, 200, 0, Math.PI * 2);
       ctx.stroke();
     },
-    touchstartFunc(
+    touchOrMouseStartFunc(
       ctx: CanvasRenderingContext2D,
       screenWidth: number,
       screenHeight: number,
@@ -52,9 +52,9 @@ export default defineComponent({
       curYubiY: number,
       yubiTouched: boolean
     ) {
-      console.log("touchstartFunc");
+      console.log("touchOrMouseStartFunc");
     },
-    touchMoveFunc(
+    touchOrMouseMoveFunc(
       ctx: CanvasRenderingContext2D,
       screenWidth: number,
       screenHeight: number,
@@ -62,9 +62,9 @@ export default defineComponent({
       curYubiY: number,
       yubiTouched: boolean
     ) {
-      console.log("touchMoveFunc");
+      console.log("touchOrMouseMoveFunc");
     },
-    touchEndFunc(
+    touchOrMouseEndFunc(
       ctx: CanvasRenderingContext2D,
       screenWidth: number,
       screenHeight: number,
@@ -72,7 +72,7 @@ export default defineComponent({
       curYubiY: number,
       yubiTouched: boolean
     ) {
-      console.log("touchEndFunc");
+      console.log("touchOrMouseEndFunc");
     },
   },
 });

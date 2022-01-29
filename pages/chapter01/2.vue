@@ -1,18 +1,18 @@
 <template>
   <div>
-    <p>Chapter 1 1-2 基礎描画</p>
+    <p>Chapter 1 1-2 touchStart</p>
     <designingmath
       :setupFunc="setupFunc"
       :loopFunc="loopFunc"
-      :touchstartFunc="touchStartFunc"
-      :touchEndFunc="touchEndFunc"
-      :touchMoveFunc="touchMoveFunc"
+      :touchOrMouseStartFunc="touchOrMouseStartFunc"
+      :touchOrMouseEndFunc="touchOrMouseEndFunc"
+      :touchOrMouseMoveFunc="touchOrMouseMoveFunc"
     />
   </div>
 </template>
 
 <script lang="ts">
-/* http://localhost:3000/chapter01/2*/
+/* http://localhost:3000/chapter01/2 */
 import { defineComponent } from "vue";
 import designingmath from "@/components/designingmath.vue";
 
@@ -31,9 +31,6 @@ export default defineComponent({
       yubiTouched: boolean
     ) {
       console.log("setupFunc");
-      ctx.moveTo(200, 200);
-      ctx.lineTo(800, 900);
-      ctx.stroke();
     },
     loopFunc(
       ctx: CanvasRenderingContext2D,
@@ -45,7 +42,7 @@ export default defineComponent({
     ) {
       console.log("loopFunc");
     },
-    touchstartFunc(
+    touchOrMouseStartFunc(
       ctx: CanvasRenderingContext2D,
       screenWidth: number,
       screenHeight: number,
@@ -53,9 +50,12 @@ export default defineComponent({
       curYubiY: number,
       yubiTouched: boolean
     ) {
-      console.log("touchstartFunc");
+      console.log("touchOrMouseStartFunc");
+      ctx.beginPath();
+      ctx.arc(curYubiX, curYubiY, 200, 0, Math.PI * 2);
+      ctx.stroke();
     },
-    touchMoveFunc(
+    touchOrMouseMoveFunc(
       ctx: CanvasRenderingContext2D,
       screenWidth: number,
       screenHeight: number,
@@ -63,9 +63,9 @@ export default defineComponent({
       curYubiY: number,
       yubiTouched: boolean
     ) {
-      console.log("touchMoveFunc");
+      console.log("touchOrMouseMoveFunc");
     },
-    touchEndFunc(
+    touchOrMouseEndFunc(
       ctx: CanvasRenderingContext2D,
       screenWidth: number,
       screenHeight: number,
@@ -73,7 +73,7 @@ export default defineComponent({
       curYubiY: number,
       yubiTouched: boolean
     ) {
-      console.log("touchEndFunc");
+      console.log("touchOrMouseEndFunc");
     },
   },
 });

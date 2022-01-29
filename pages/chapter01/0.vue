@@ -4,9 +4,9 @@
     <designingmath
       :setupFunc="setupFunc"
       :loopFunc="loopFunc"
-      :touchstartFunc="touchStartFunc"
-      :touchEndFunc="touchEndFunc"
-      :touchMoveFunc="touchMoveFunc"
+      :touchOrMouseStartFunc="touchOrMouseStartFunc"
+      :touchOrMouseEndFunc="touchOrMouseEndFunc"
+      :touchOrMouseMoveFunc="touchOrMouseMoveFunc"
     />
   </div>
 </template>
@@ -29,7 +29,7 @@ export default defineComponent({
       curYubiY: number,
       yubiTouched: boolean
     ) {
-      console.log("setupFunc");
+      console.log("setupFunc 0");
     },
     loopFunc(
       ctx: CanvasRenderingContext2D,
@@ -39,9 +39,9 @@ export default defineComponent({
       curYubiY: number,
       yubiTouched: boolean
     ) {
-      console.log("loopFunc");
+      console.log("loopFunc 0");
     },
-    touchstartFunc(
+    touchOrMouseStartFunc(
       ctx: CanvasRenderingContext2D,
       screenWidth: number,
       screenHeight: number,
@@ -49,9 +49,9 @@ export default defineComponent({
       curYubiY: number,
       yubiTouched: boolean
     ) {
-      console.log("touchstartFunc");
+      console.log("touchOrMouseStartFunc");
     },
-    touchMoveFunc(
+    touchOrMouseMoveFunc(
       ctx: CanvasRenderingContext2D,
       screenWidth: number,
       screenHeight: number,
@@ -59,9 +59,9 @@ export default defineComponent({
       curYubiY: number,
       yubiTouched: boolean
     ) {
-      console.log("touchMoveFunc");
+      console.log("touchOrMouseMoveFunc 0");
     },
-    touchEndFunc(
+    touchOrMouseEndFunc(
       ctx: CanvasRenderingContext2D,
       screenWidth: number,
       screenHeight: number,
@@ -69,7 +69,7 @@ export default defineComponent({
       curYubiY: number,
       yubiTouched: boolean
     ) {
-      console.log("touchEndFunc");
+      console.log("touchOrMouseEndFunc 0");
     },
   },
 });
