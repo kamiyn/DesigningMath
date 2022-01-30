@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>Chapter 4 4-4 青海波を描く</p>
+    <p>Chapter 4 4-5 波を作る</p>
     <designingmath
       :setupFunc="setupFunc"
       :loopFunc="loopFunc"
@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-/* http://localhost:3000/chapter04/4 */
+/* http://localhost:3000/chapter04/5 */
 import { defineComponent } from "vue";
 import designingmath from "@/components/designingmath.vue";
 
@@ -24,6 +24,7 @@ var unitSizeX: number;
 var unitSizeY: number;
 var offsetX: number;
 var offsetY: number;
+var startTime: number;
 
 export default defineComponent({
   components: {
@@ -47,6 +48,21 @@ export default defineComponent({
       const totalLength = unitSize * unitKazu;
       offsetX = (screenWidth - totalLength) / 2;
       offsetY = (screenHeight - totalLength) / 2;
+      startTime = new Date().getTime(); // ミリ秒単位での UnixEpoch からの経過時間
+    },
+    loopFunc(
+      ctx: CanvasRenderingContext2D,
+      screenWidth: number,
+      screenHeight: number,
+      curYubiX: number,
+      curYubiY: number,
+      yubiTouched: boolean
+    ) {
+      console.log("loopFunc");
+      ctx.clearRect(0, 0, screenWidth, screenHeight);
+      const par2 = ((new Date().getTime() - startTime) % 3000) / 3000; // ミリ秒単位で 0から1の間を変化する
+      const kakudoA = par2 * Math.PI * 2; // 回転角度
+      const kakudo324 = 0.9 * Math.PI * 2; // 90% 324度 を表すラジアン
 
       // 縦方向に上から詰めて 上にある〇が裏側に来るようにする、が外側のループ
       // 横・縦とも 描画する個数を1つ増やす
@@ -82,24 +98,14 @@ export default defineComponent({
               x + hankei /* 配置用の半径は維持する */,
               y + hankei,
               (hankei / (arcNum + 1)) * (lineIdx + 1) /* 描画用の半径 */,
-              0,
-              Math.PI * 2,
+              kakudoA + 0,
+              kakudoA + kakudo324,
               false
             );
             ctx.stroke();
           });
         })
       );
-    },
-    loopFunc(
-      ctx: CanvasRenderingContext2D,
-      screenWidth: number,
-      screenHeight: number,
-      curYubiX: number,
-      curYubiY: number,
-      yubiTouched: boolean
-    ) {
-      console.log("loopFunc");
     },
     touchOrMouseStartFunc(
       ctx: CanvasRenderingContext2D,
