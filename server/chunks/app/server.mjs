@@ -3033,10 +3033,10 @@ const _export_sfc = (sfc, props) => {
   }
   return target;
 };
-const _sfc_main$x = {
+const _sfc_main$F = {
   name: "NuxtNestedPage"
 };
-function _sfc_ssrRender$k(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$o(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_RouterView = vue_cjs_prod.resolveComponent("RouterView");
   _push(serverRenderer.exports.ssrRenderComponent(_component_RouterView, _attrs, {
     default: vue_cjs_prod.withCtx(({ Component }, _push2, _parent2, _scopeId) => {
@@ -3055,13 +3055,13 @@ function _sfc_ssrRender$k(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
     _: 1
   }, _parent));
 }
-const _sfc_setup$x = _sfc_main$x.setup;
-_sfc_main$x.setup = (props, ctx) => {
+const _sfc_setup$F = _sfc_main$F.setup;
+_sfc_main$F.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("node_modules/nuxt3/dist/pages/runtime/nested-page.vue");
-  return _sfc_setup$x ? _sfc_setup$x(props, ctx) : void 0;
+  return _sfc_setup$F ? _sfc_setup$F(props, ctx) : void 0;
 };
-const NuxtNestedPage = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["ssrRender", _sfc_ssrRender$k]]);
+const NuxtNestedPage = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["ssrRender", _sfc_ssrRender$o]]);
 const layouts = {};
 const NuxtLayout = vue_cjs_prod.defineComponent({
   props: {
@@ -3090,7 +3090,7 @@ const NuxtTransition = vue_cjs_prod.defineComponent({
     return () => props.options ? vue_cjs_prod.h(vue_cjs_prod.Transition, props.options, slots.default) : slots.default();
   }
 });
-const _sfc_main$w = vue_cjs_prod.defineComponent({
+const _sfc_main$E = vue_cjs_prod.defineComponent({
   name: "NuxtPage",
   components: { NuxtLayout, NuxtTransition },
   props: {
@@ -3113,7 +3113,7 @@ const _sfc_main$w = vue_cjs_prod.defineComponent({
     };
   }
 });
-function _sfc_ssrRender$j(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$n(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_RouterView = vue_cjs_prod.resolveComponent("RouterView");
   const _component_NuxtLayout = vue_cjs_prod.resolveComponent("NuxtLayout");
   const _component_NuxtTransition = vue_cjs_prod.resolveComponent("NuxtTransition");
@@ -3223,15 +3223,15 @@ function _sfc_ssrRender$j(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
     _: 1
   }, _parent));
 }
-const _sfc_setup$w = _sfc_main$w.setup;
-_sfc_main$w.setup = (props, ctx) => {
+const _sfc_setup$E = _sfc_main$E.setup;
+_sfc_main$E.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("node_modules/nuxt3/dist/pages/runtime/page.vue");
-  return _sfc_setup$w ? _sfc_setup$w(props, ctx) : void 0;
+  return _sfc_setup$E ? _sfc_setup$E(props, ctx) : void 0;
 };
-const NuxtPage = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["ssrRender", _sfc_ssrRender$j]]);
+const NuxtPage = /* @__PURE__ */ _export_sfc(_sfc_main$E, [["ssrRender", _sfc_ssrRender$n]]);
 var timerId;
-const _sfc_main$v = vue_cjs_prod.defineComponent({
+const _sfc_main$D = vue_cjs_prod.defineComponent({
   name: "designingmath",
   props: {
     setupFunc: {
@@ -3338,7 +3338,7 @@ const _sfc_main$v = vue_cjs_prod.defineComponent({
     };
   }
 });
-function _sfc_ssrRender$i(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$m(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   _push(`<canvas${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({
     class: "canvasElement",
     ref: "canvasElement",
@@ -3346,19 +3346,19 @@ function _sfc_ssrRender$i(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
     height: "1600"
   }, _attrs))} data-v-9f747400></canvas>`);
 }
-const _sfc_setup$v = _sfc_main$v.setup;
-_sfc_main$v.setup = (props, ctx) => {
+const _sfc_setup$D = _sfc_main$D.setup;
+_sfc_main$D.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("components/designingmath.vue");
-  return _sfc_setup$v ? _sfc_setup$v(props, ctx) : void 0;
+  return _sfc_setup$D ? _sfc_setup$D(props, ctx) : void 0;
 };
-const __nuxt_component_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["ssrRender", _sfc_ssrRender$i], ["__scopeId", "data-v-9f747400"]]);
+const __nuxt_component_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["ssrRender", _sfc_ssrRender$m], ["__scopeId", "data-v-9f747400"]]);
 const designingmath = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": __nuxt_component_0$1
 });
-const _sfc_main$u = vue_cjs_prod.defineComponent({
+const _sfc_main$C = vue_cjs_prod.defineComponent({
   components: {
     designingmath: __nuxt_component_0$1
   },
@@ -3380,14 +3380,14 @@ const _sfc_main$u = vue_cjs_prod.defineComponent({
     }
   }
 });
-const _sfc_setup$u = _sfc_main$u.setup;
-_sfc_main$u.setup = (props, ctx) => {
+const _sfc_setup$C = _sfc_main$C.setup;
+_sfc_main$C.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter01/0.vue");
-  return _sfc_setup$u ? _sfc_setup$u(props, ctx) : void 0;
+  return _sfc_setup$C ? _sfc_setup$C(props, ctx) : void 0;
 };
-const meta$e = void 0;
-const _sfc_main$t = vue_cjs_prod.defineComponent({
+const meta$i = void 0;
+const _sfc_main$B = vue_cjs_prod.defineComponent({
   components: {
     designingmath: __nuxt_component_0$1
   },
@@ -3414,14 +3414,14 @@ const _sfc_main$t = vue_cjs_prod.defineComponent({
     }
   }
 });
-const _sfc_setup$t = _sfc_main$t.setup;
-_sfc_main$t.setup = (props, ctx) => {
+const _sfc_setup$B = _sfc_main$B.setup;
+_sfc_main$B.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter01/1.vue");
-  return _sfc_setup$t ? _sfc_setup$t(props, ctx) : void 0;
+  return _sfc_setup$B ? _sfc_setup$B(props, ctx) : void 0;
 };
-const meta$d = void 0;
-const _sfc_main$s = vue_cjs_prod.defineComponent({
+const meta$h = void 0;
+const _sfc_main$A = vue_cjs_prod.defineComponent({
   components: {
     designingmath: __nuxt_component_0$1
   },
@@ -3448,14 +3448,14 @@ const _sfc_main$s = vue_cjs_prod.defineComponent({
     }
   }
 });
-const _sfc_setup$s = _sfc_main$s.setup;
-_sfc_main$s.setup = (props, ctx) => {
+const _sfc_setup$A = _sfc_main$A.setup;
+_sfc_main$A.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter01/2.vue");
-  return _sfc_setup$s ? _sfc_setup$s(props, ctx) : void 0;
+  return _sfc_setup$A ? _sfc_setup$A(props, ctx) : void 0;
 };
-const meta$c = void 0;
-const _sfc_main$r = vue_cjs_prod.defineComponent({
+const meta$g = void 0;
+const _sfc_main$z = vue_cjs_prod.defineComponent({
   components: {
     designingmath: __nuxt_component_0$1
   },
@@ -3483,14 +3483,14 @@ const _sfc_main$r = vue_cjs_prod.defineComponent({
     }
   }
 });
-const _sfc_setup$r = _sfc_main$r.setup;
-_sfc_main$r.setup = (props, ctx) => {
+const _sfc_setup$z = _sfc_main$z.setup;
+_sfc_main$z.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter02/1.vue");
-  return _sfc_setup$r ? _sfc_setup$r(props, ctx) : void 0;
+  return _sfc_setup$z ? _sfc_setup$z(props, ctx) : void 0;
 };
-const meta$b = void 0;
-const _sfc_main$q = vue_cjs_prod.defineComponent({
+const meta$f = void 0;
+const _sfc_main$y = vue_cjs_prod.defineComponent({
   components: {
     designingmath: __nuxt_component_0$1
   },
@@ -3526,14 +3526,14 @@ const _sfc_main$q = vue_cjs_prod.defineComponent({
     }
   }
 });
-const _sfc_setup$q = _sfc_main$q.setup;
-_sfc_main$q.setup = (props, ctx) => {
+const _sfc_setup$y = _sfc_main$y.setup;
+_sfc_main$y.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter02/2.vue");
-  return _sfc_setup$q ? _sfc_setup$q(props, ctx) : void 0;
+  return _sfc_setup$y ? _sfc_setup$y(props, ctx) : void 0;
 };
-const meta$a = void 0;
-const _sfc_main$p = vue_cjs_prod.defineComponent({
+const meta$e = void 0;
+const _sfc_main$x = vue_cjs_prod.defineComponent({
   components: {
     designingmath: __nuxt_component_0$1
   },
@@ -3568,14 +3568,14 @@ const _sfc_main$p = vue_cjs_prod.defineComponent({
     }
   }
 });
-const _sfc_setup$p = _sfc_main$p.setup;
-_sfc_main$p.setup = (props, ctx) => {
+const _sfc_setup$x = _sfc_main$x.setup;
+_sfc_main$x.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter02/3.vue");
-  return _sfc_setup$p ? _sfc_setup$p(props, ctx) : void 0;
+  return _sfc_setup$x ? _sfc_setup$x(props, ctx) : void 0;
 };
-const meta$9 = void 0;
-const _sfc_main$o = vue_cjs_prod.defineComponent({
+const meta$d = void 0;
+const _sfc_main$w = vue_cjs_prod.defineComponent({
   components: {
     designingmath: __nuxt_component_0$1
   },
@@ -3609,14 +3609,14 @@ const _sfc_main$o = vue_cjs_prod.defineComponent({
     }
   }
 });
-const _sfc_setup$o = _sfc_main$o.setup;
-_sfc_main$o.setup = (props, ctx) => {
+const _sfc_setup$w = _sfc_main$w.setup;
+_sfc_main$w.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter02/4.vue");
-  return _sfc_setup$o ? _sfc_setup$o(props, ctx) : void 0;
+  return _sfc_setup$w ? _sfc_setup$w(props, ctx) : void 0;
 };
-const meta$8 = void 0;
-const _sfc_main$n = vue_cjs_prod.defineComponent({
+const meta$c = void 0;
+const _sfc_main$v = vue_cjs_prod.defineComponent({
   components: {
     designingmath: __nuxt_component_0$1
   },
@@ -3658,14 +3658,14 @@ const _sfc_main$n = vue_cjs_prod.defineComponent({
     }
   }
 });
-const _sfc_setup$n = _sfc_main$n.setup;
-_sfc_main$n.setup = (props, ctx) => {
+const _sfc_setup$v = _sfc_main$v.setup;
+_sfc_main$v.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter02/5.vue");
-  return _sfc_setup$n ? _sfc_setup$n(props, ctx) : void 0;
+  return _sfc_setup$v ? _sfc_setup$v(props, ctx) : void 0;
 };
-const meta$7 = void 0;
-const _sfc_main$m = vue_cjs_prod.defineComponent({
+const meta$b = void 0;
+const _sfc_main$u = vue_cjs_prod.defineComponent({
   components: {
     designingmath: __nuxt_component_0$1
   },
@@ -3703,14 +3703,14 @@ const _sfc_main$m = vue_cjs_prod.defineComponent({
     }
   }
 });
-const _sfc_setup$m = _sfc_main$m.setup;
-_sfc_main$m.setup = (props, ctx) => {
+const _sfc_setup$u = _sfc_main$u.setup;
+_sfc_main$u.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter02/6.vue");
-  return _sfc_setup$m ? _sfc_setup$m(props, ctx) : void 0;
+  return _sfc_setup$u ? _sfc_setup$u(props, ctx) : void 0;
 };
-const meta$6 = void 0;
-const _sfc_main$l = vue_cjs_prod.defineComponent({
+const meta$a = void 0;
+const _sfc_main$t = vue_cjs_prod.defineComponent({
   components: {
     designingmath: __nuxt_component_0$1
   },
@@ -3738,14 +3738,14 @@ const _sfc_main$l = vue_cjs_prod.defineComponent({
     }
   }
 });
-const _sfc_setup$l = _sfc_main$l.setup;
-_sfc_main$l.setup = (props, ctx) => {
+const _sfc_setup$t = _sfc_main$t.setup;
+_sfc_main$t.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter02/7.vue");
-  return _sfc_setup$l ? _sfc_setup$l(props, ctx) : void 0;
+  return _sfc_setup$t ? _sfc_setup$t(props, ctx) : void 0;
 };
-const meta$5 = void 0;
-const _sfc_main$k = vue_cjs_prod.defineComponent({
+const meta$9 = void 0;
+const _sfc_main$s = vue_cjs_prod.defineComponent({
   components: {
     designingmath: __nuxt_component_0$1
   },
@@ -3775,14 +3775,14 @@ const _sfc_main$k = vue_cjs_prod.defineComponent({
     }
   }
 });
-const _sfc_setup$k = _sfc_main$k.setup;
-_sfc_main$k.setup = (props, ctx) => {
+const _sfc_setup$s = _sfc_main$s.setup;
+_sfc_main$s.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter02/8.vue");
-  return _sfc_setup$k ? _sfc_setup$k(props, ctx) : void 0;
+  return _sfc_setup$s ? _sfc_setup$s(props, ctx) : void 0;
 };
-const meta$4 = void 0;
-const _sfc_main$j = vue_cjs_prod.defineComponent({
+const meta$8 = void 0;
+const _sfc_main$r = vue_cjs_prod.defineComponent({
   components: {
     designingmath: __nuxt_component_0$1
   },
@@ -3814,19 +3814,19 @@ const _sfc_main$j = vue_cjs_prod.defineComponent({
     }
   }
 });
-const _sfc_setup$j = _sfc_main$j.setup;
-_sfc_main$j.setup = (props, ctx) => {
+const _sfc_setup$r = _sfc_main$r.setup;
+_sfc_main$r.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter02/9.vue");
-  return _sfc_setup$j ? _sfc_setup$j(props, ctx) : void 0;
+  return _sfc_setup$r ? _sfc_setup$r(props, ctx) : void 0;
 };
-const meta$3 = void 0;
-const unitKazu$1 = 16;
-const unitSize$1 = 60;
-const xOffset$1 = unitSize$1 / 2;
-const yOffset$1 = unitSize$1 / 2;
-const hankei$1 = unitSize$1 / 2;
-const _sfc_main$i = vue_cjs_prod.defineComponent({
+const meta$7 = void 0;
+const unitKazu$9 = 16;
+const unitSize$9 = 60;
+const offsetX$9 = 0;
+const offsetY$9 = 0;
+const hankei$1 = unitSize$9 / 2;
+const _sfc_main$q = vue_cjs_prod.defineComponent({
   components: {
     designingmath: __nuxt_component_0$1
   },
@@ -3835,11 +3835,11 @@ const _sfc_main$i = vue_cjs_prod.defineComponent({
   methods: {
     setupFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
       console.log("setupFunc");
-      [...Array(unitKazu$1).keys()].forEach((tateNum) => [...Array(unitKazu$1).keys()].forEach((yokoNum) => {
-        const x = unitSize$1 * yokoNum + xOffset$1;
-        const y = unitSize$1 * tateNum + yOffset$1;
+      [...Array(unitKazu$9).keys()].forEach((tateNum) => [...Array(unitKazu$9).keys()].forEach((yokoNum) => {
+        const x = unitSize$9 * yokoNum + offsetX$9;
+        const y = unitSize$9 * tateNum + offsetY$9;
         ctx.beginPath();
-        ctx.arc(x, y, hankei$1, 0, Math.PI * 2, true);
+        ctx.arc(x + hankei$1, y + hankei$1, hankei$1, 0, Math.PI * 2, true);
         ctx.fill();
       }));
     },
@@ -3857,11 +3857,215 @@ const _sfc_main$i = vue_cjs_prod.defineComponent({
     }
   }
 });
-const _sfc_setup$i = _sfc_main$i.setup;
-_sfc_main$i.setup = (props, ctx) => {
+const _sfc_setup$q = _sfc_main$q.setup;
+_sfc_main$q.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter03/1.vue");
-  return _sfc_setup$i ? _sfc_setup$i(props, ctx) : void 0;
+  return _sfc_setup$q ? _sfc_setup$q(props, ctx) : void 0;
+};
+const meta$6 = void 0;
+const unitKazu$8 = 16;
+var unitSize$8;
+var offsetX$8;
+var offsetY$8;
+const _sfc_main$p = vue_cjs_prod.defineComponent({
+  components: {
+    designingmath: __nuxt_component_0$1
+  },
+  setup() {
+  },
+  methods: {
+    setupFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("setupFunc");
+      unitSize$8 = Math.min(screenWidth, screenHeight) / unitKazu$8;
+      const totalLength = unitSize$8 * unitKazu$8;
+      offsetX$8 = (screenWidth - totalLength) / 2;
+      offsetY$8 = (screenHeight - totalLength) / 2;
+      const hankei2 = unitSize$8 / 2;
+      [...Array(unitKazu$8).keys()].forEach((tateNum) => [...Array(unitKazu$8).keys()].forEach((yokoNum) => {
+        const x = unitSize$8 * yokoNum + offsetX$8;
+        const y = unitSize$8 * tateNum + offsetY$8;
+        ctx.beginPath();
+        ctx.arc(x + hankei2, y + hankei2, hankei2, 0, Math.PI * 2, true);
+        ctx.fill();
+      }));
+    },
+    loopFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("loopFunc");
+    },
+    touchOrMouseStartFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("touchOrMouseStartFunc");
+    },
+    touchOrMouseMoveFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("touchOrMouseMoveFunc");
+    },
+    touchOrMouseEndFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("touchOrMouseEndFunc");
+    }
+  }
+});
+const _sfc_setup$p = _sfc_main$p.setup;
+_sfc_main$p.setup = (props, ctx) => {
+  const ssrContext = vue_cjs_prod.useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter03/2.vue");
+  return _sfc_setup$p ? _sfc_setup$p(props, ctx) : void 0;
+};
+const meta$5 = void 0;
+const unitKazu$7 = 16;
+var unitSize$7;
+var offsetX$7;
+var offsetY$7;
+const _sfc_main$o = vue_cjs_prod.defineComponent({
+  components: {
+    designingmath: __nuxt_component_0$1
+  },
+  setup() {
+  },
+  methods: {
+    setupFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("setupFunc");
+      unitSize$7 = Math.min(screenWidth, screenHeight) / unitKazu$7;
+      const totalLength = unitSize$7 * unitKazu$7;
+      offsetX$7 = (screenWidth - totalLength) / 2;
+      offsetY$7 = (screenHeight - totalLength) / 2;
+      const hankei2 = unitSize$7 / 2;
+      var idx = 0;
+      [...Array(unitKazu$7).keys()].forEach((tateNum) => [...Array(unitKazu$7).keys()].forEach((yokoNum) => {
+        const par1 = idx++ % (unitKazu$7 + 1) / unitKazu$7;
+        const x = unitSize$7 * yokoNum + offsetX$7;
+        const y = unitSize$7 * tateNum + offsetY$7;
+        ctx.beginPath();
+        ctx.arc(x + hankei2, y + hankei2, par1 * hankei2, 0, Math.PI * 2, true);
+        ctx.fill();
+      }));
+    },
+    loopFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("loopFunc");
+    },
+    touchOrMouseStartFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("touchOrMouseStartFunc");
+    },
+    touchOrMouseMoveFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("touchOrMouseMoveFunc");
+    },
+    touchOrMouseEndFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("touchOrMouseEndFunc");
+    }
+  }
+});
+const _sfc_setup$o = _sfc_main$o.setup;
+_sfc_main$o.setup = (props, ctx) => {
+  const ssrContext = vue_cjs_prod.useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter03/3.vue");
+  return _sfc_setup$o ? _sfc_setup$o(props, ctx) : void 0;
+};
+const meta$4 = void 0;
+const unitKazu$6 = 16;
+var unitSize$6;
+var offsetX$6;
+var offsetY$6;
+var startTime$3;
+const _sfc_main$n = vue_cjs_prod.defineComponent({
+  components: {
+    designingmath: __nuxt_component_0$1
+  },
+  setup() {
+  },
+  methods: {
+    setupFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("setupFunc");
+      unitSize$6 = Math.min(screenWidth, screenHeight) / unitKazu$6;
+      startTime$3 = new Date().getTime();
+    },
+    loopFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("loopFunc");
+      ctx.clearRect(0, 0, screenWidth, screenHeight);
+      const par2 = (new Date().getTime() - startTime$3) % 1e3 / 999;
+      const totalLength = unitSize$6 * unitKazu$6;
+      offsetX$6 = (screenWidth - totalLength) / 2;
+      offsetY$6 = (screenHeight - totalLength) / 2;
+      const hankei2 = unitSize$6 / 2;
+      var idx = 0;
+      [...Array(unitKazu$6).keys()].forEach((tateNum) => [...Array(unitKazu$6).keys()].forEach((yokoNum) => {
+        const par1 = idx++ % (unitKazu$6 + 1) / unitKazu$6;
+        const x = unitSize$6 * yokoNum + offsetX$6;
+        const y = unitSize$6 * tateNum + offsetY$6;
+        ctx.beginPath();
+        ctx.arc(x + hankei2, y + hankei2, (par1 + par2) * hankei2 % hankei2 + 1, 0, Math.PI * 2, true);
+        ctx.fill();
+      }));
+    },
+    touchOrMouseStartFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("touchOrMouseStartFunc");
+    },
+    touchOrMouseMoveFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("touchOrMouseMoveFunc");
+    },
+    touchOrMouseEndFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("touchOrMouseEndFunc");
+    }
+  }
+});
+const _sfc_setup$n = _sfc_main$n.setup;
+_sfc_main$n.setup = (props, ctx) => {
+  const ssrContext = vue_cjs_prod.useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter03/4.vue");
+  return _sfc_setup$n ? _sfc_setup$n(props, ctx) : void 0;
+};
+const meta$3 = void 0;
+const unitKazu$5 = 16;
+var unitSize$5;
+var offsetX$5;
+var offsetY$5;
+var startTime$2;
+const _sfc_main$m = vue_cjs_prod.defineComponent({
+  components: {
+    designingmath: __nuxt_component_0$1
+  },
+  setup() {
+  },
+  methods: {
+    setupFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("setupFunc");
+      unitSize$5 = Math.min(screenWidth, screenHeight) / unitKazu$5;
+      startTime$2 = new Date().getTime();
+    },
+    loopFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("loopFunc");
+      ctx.clearRect(0, 0, screenWidth, screenHeight);
+      const par2 = (new Date().getTime() - startTime$2) % 1e3 / 999;
+      const totalLength = unitSize$5 * unitKazu$5;
+      offsetX$5 = (screenWidth - totalLength) / 2;
+      offsetY$5 = (screenHeight - totalLength) / 2;
+      const hankei2 = unitSize$5 / 2;
+      var idx = 0;
+      [...Array(unitKazu$5).keys()].forEach((tateNum) => [...Array(unitKazu$5).keys()].forEach((yokoNum) => {
+        const par1 = idx++ % (unitKazu$5 + 1) / unitKazu$5;
+        const parC = (par1 + par2) * 256 % 256;
+        ctx.fillStyle = `rgb(${parC},${parC},${parC})`;
+        const x = unitSize$5 * yokoNum + offsetX$5;
+        const y = unitSize$5 * tateNum + offsetY$5;
+        ctx.beginPath();
+        ctx.arc(x + hankei2, y + hankei2, (par1 + par2) * hankei2 % hankei2 + 1, 0, Math.PI * 2, true);
+        ctx.fill();
+      }));
+    },
+    touchOrMouseStartFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("touchOrMouseStartFunc");
+    },
+    touchOrMouseMoveFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("touchOrMouseMoveFunc");
+    },
+    touchOrMouseEndFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("touchOrMouseEndFunc");
+    }
+  }
+});
+const _sfc_setup$m = _sfc_main$m.setup;
+_sfc_main$m.setup = (props, ctx) => {
+  const ssrContext = vue_cjs_prod.useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter03/5.vue");
+  return _sfc_setup$m ? _sfc_setup$m(props, ctx) : void 0;
 };
 const meta$2 = void 0;
 const meta$1 = void 0;
@@ -3872,7 +4076,7 @@ const routes = [
     "path": "/chapter01/0",
     "file": "/home/runner/work/DesigningMath/DesigningMath/pages/chapter01/0.vue",
     "children": [],
-    "meta": meta$e,
+    "meta": meta$i,
     "component": () => Promise.resolve().then(function() {
       return _0$1;
     })
@@ -3882,7 +4086,7 @@ const routes = [
     "path": "/chapter01/1",
     "file": "/home/runner/work/DesigningMath/DesigningMath/pages/chapter01/1.vue",
     "children": [],
-    "meta": meta$d,
+    "meta": meta$h,
     "component": () => Promise.resolve().then(function() {
       return _1$5;
     })
@@ -3892,9 +4096,9 @@ const routes = [
     "path": "/chapter01/2",
     "file": "/home/runner/work/DesigningMath/DesigningMath/pages/chapter01/2.vue",
     "children": [],
-    "meta": meta$c,
+    "meta": meta$g,
     "component": () => Promise.resolve().then(function() {
-      return _2$3;
+      return _2$5;
     })
   },
   {
@@ -3902,7 +4106,7 @@ const routes = [
     "path": "/chapter02/1",
     "file": "/home/runner/work/DesigningMath/DesigningMath/pages/chapter02/1.vue",
     "children": [],
-    "meta": meta$b,
+    "meta": meta$f,
     "component": () => Promise.resolve().then(function() {
       return _1$3;
     })
@@ -3912,9 +4116,9 @@ const routes = [
     "path": "/chapter02/2",
     "file": "/home/runner/work/DesigningMath/DesigningMath/pages/chapter02/2.vue",
     "children": [],
-    "meta": meta$a,
+    "meta": meta$e,
     "component": () => Promise.resolve().then(function() {
-      return _2$1;
+      return _2$3;
     })
   },
   {
@@ -3922,9 +4126,9 @@ const routes = [
     "path": "/chapter02/3",
     "file": "/home/runner/work/DesigningMath/DesigningMath/pages/chapter02/3.vue",
     "children": [],
-    "meta": meta$9,
+    "meta": meta$d,
     "component": () => Promise.resolve().then(function() {
-      return _3$1;
+      return _3$3;
     })
   },
   {
@@ -3932,9 +4136,9 @@ const routes = [
     "path": "/chapter02/4",
     "file": "/home/runner/work/DesigningMath/DesigningMath/pages/chapter02/4.vue",
     "children": [],
-    "meta": meta$8,
+    "meta": meta$c,
     "component": () => Promise.resolve().then(function() {
-      return _4$1;
+      return _4$3;
     })
   },
   {
@@ -3942,9 +4146,9 @@ const routes = [
     "path": "/chapter02/5",
     "file": "/home/runner/work/DesigningMath/DesigningMath/pages/chapter02/5.vue",
     "children": [],
-    "meta": meta$7,
+    "meta": meta$b,
     "component": () => Promise.resolve().then(function() {
-      return _5$1;
+      return _5$3;
     })
   },
   {
@@ -3952,7 +4156,7 @@ const routes = [
     "path": "/chapter02/6",
     "file": "/home/runner/work/DesigningMath/DesigningMath/pages/chapter02/6.vue",
     "children": [],
-    "meta": meta$6,
+    "meta": meta$a,
     "component": () => Promise.resolve().then(function() {
       return _6$1;
     })
@@ -3962,7 +4166,7 @@ const routes = [
     "path": "/chapter02/7",
     "file": "/home/runner/work/DesigningMath/DesigningMath/pages/chapter02/7.vue",
     "children": [],
-    "meta": meta$5,
+    "meta": meta$9,
     "component": () => Promise.resolve().then(function() {
       return _7$1;
     })
@@ -3972,7 +4176,7 @@ const routes = [
     "path": "/chapter02/8",
     "file": "/home/runner/work/DesigningMath/DesigningMath/pages/chapter02/8.vue",
     "children": [],
-    "meta": meta$4,
+    "meta": meta$8,
     "component": () => Promise.resolve().then(function() {
       return _8$1;
     })
@@ -3982,7 +4186,7 @@ const routes = [
     "path": "/chapter02/9",
     "file": "/home/runner/work/DesigningMath/DesigningMath/pages/chapter02/9.vue",
     "children": [],
-    "meta": meta$3,
+    "meta": meta$7,
     "component": () => Promise.resolve().then(function() {
       return _9$1;
     })
@@ -3992,9 +4196,49 @@ const routes = [
     "path": "/chapter03/1",
     "file": "/home/runner/work/DesigningMath/DesigningMath/pages/chapter03/1.vue",
     "children": [],
-    "meta": meta$2,
+    "meta": meta$6,
     "component": () => Promise.resolve().then(function() {
       return _1$1;
+    })
+  },
+  {
+    "name": "chapter03-2",
+    "path": "/chapter03/2",
+    "file": "/home/runner/work/DesigningMath/DesigningMath/pages/chapter03/2.vue",
+    "children": [],
+    "meta": meta$5,
+    "component": () => Promise.resolve().then(function() {
+      return _2$1;
+    })
+  },
+  {
+    "name": "chapter03-3",
+    "path": "/chapter03/3",
+    "file": "/home/runner/work/DesigningMath/DesigningMath/pages/chapter03/3.vue",
+    "children": [],
+    "meta": meta$4,
+    "component": () => Promise.resolve().then(function() {
+      return _3$1;
+    })
+  },
+  {
+    "name": "chapter03-4",
+    "path": "/chapter03/4",
+    "file": "/home/runner/work/DesigningMath/DesigningMath/pages/chapter03/4.vue",
+    "children": [],
+    "meta": meta$3,
+    "component": () => Promise.resolve().then(function() {
+      return _4$1;
+    })
+  },
+  {
+    "name": "chapter03-5",
+    "path": "/chapter03/5",
+    "file": "/home/runner/work/DesigningMath/DesigningMath/pages/chapter03/5.vue",
+    "children": [],
+    "meta": meta$2,
+    "component": () => Promise.resolve().then(function() {
+      return _5$1;
     })
   },
   {
@@ -4420,13 +4664,13 @@ const _plugins = [
   nitroClient_33092f2b,
   components_515c5644
 ];
-const _sfc_main$h = {
+const _sfc_main$l = {
   setup() {
     const nuxtApp = useNuxtApp();
     nuxtApp.hooks.callHookWith((hooks) => hooks.map((hook) => hook()), "vue:setup");
   }
 };
-function _sfc_ssrRender$h(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$l(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_App = vue_cjs_prod.resolveComponent("App");
   serverRenderer.exports.ssrRenderSuspense(_push, {
     default: () => {
@@ -4435,27 +4679,27 @@ function _sfc_ssrRender$h(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
     _: 1
   });
 }
-const _sfc_setup$h = _sfc_main$h.setup;
-_sfc_main$h.setup = (props, ctx) => {
+const _sfc_setup$l = _sfc_main$l.setup;
+_sfc_main$l.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("node_modules/nuxt3/dist/app/components/nuxt-root.vue");
-  return _sfc_setup$h ? _sfc_setup$h(props, ctx) : void 0;
+  return _sfc_setup$l ? _sfc_setup$l(props, ctx) : void 0;
 };
-const RootComponent = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["ssrRender", _sfc_ssrRender$h]]);
-const _sfc_main$g = {};
-function _sfc_ssrRender$g(_ctx, _push, _parent, _attrs) {
+const RootComponent = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["ssrRender", _sfc_ssrRender$l]]);
+const _sfc_main$k = {};
+function _sfc_ssrRender$k(_ctx, _push, _parent, _attrs) {
   const _component_NuxtPage = vue_cjs_prod.resolveComponent("NuxtPage");
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtPage, null, null, _parent));
   _push(`</div>`);
 }
-const _sfc_setup$g = _sfc_main$g.setup;
-_sfc_main$g.setup = (props, ctx) => {
+const _sfc_setup$k = _sfc_main$k.setup;
+_sfc_main$k.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("app.vue");
-  return _sfc_setup$g ? _sfc_setup$g(props, ctx) : void 0;
+  return _sfc_setup$k ? _sfc_setup$k(props, ctx) : void 0;
 };
-const AppComponent = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["ssrRender", _sfc_ssrRender$g]]);
+const AppComponent = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["ssrRender", _sfc_ssrRender$k]]);
 let entry;
 const plugins = normalizePlugins(_plugins);
 {
@@ -4474,7 +4718,7 @@ const bootstrap$1 = /* @__PURE__ */ Object.freeze({
   [Symbol.toStringTag]: "Module",
   "default": bootstrap
 });
-const _sfc_main$f = vue_cjs_prod.defineComponent({
+const _sfc_main$j = vue_cjs_prod.defineComponent({
   components: {
     designingmath: __nuxt_component_0$1
   },
@@ -4496,7 +4740,7 @@ const _sfc_main$f = vue_cjs_prod.defineComponent({
     }
   }
 });
-function _sfc_ssrRender$f(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$j(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_designingmath = __nuxt_component_0$1;
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}><p>0.vue \u95A2\u6570\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8</p>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_designingmath, {
@@ -4508,19 +4752,19 @@ function _sfc_ssrRender$f(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
   }, null, _parent));
   _push(`</div>`);
 }
-const _sfc_setup$f = _sfc_main$f.setup;
-_sfc_main$f.setup = (props, ctx) => {
+const _sfc_setup$j = _sfc_main$j.setup;
+_sfc_main$j.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter01/0.vue");
-  return _sfc_setup$f ? _sfc_setup$f(props, ctx) : void 0;
+  return _sfc_setup$j ? _sfc_setup$j(props, ctx) : void 0;
 };
-const _0 = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["ssrRender", _sfc_ssrRender$f]]);
+const _0 = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["ssrRender", _sfc_ssrRender$j]]);
 const _0$1 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": _0
 });
-const _sfc_main$e = vue_cjs_prod.defineComponent({
+const _sfc_main$i = vue_cjs_prod.defineComponent({
   components: {
     designingmath: __nuxt_component_0$1
   },
@@ -4547,7 +4791,7 @@ const _sfc_main$e = vue_cjs_prod.defineComponent({
     }
   }
 });
-function _sfc_ssrRender$e(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$i(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_designingmath = __nuxt_component_0$1;
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}><p>Chapter 1 1-1 \u4ED5\u7D44\u307F</p>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_designingmath, {
@@ -4559,19 +4803,19 @@ function _sfc_ssrRender$e(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
   }, null, _parent));
   _push(`</div>`);
 }
-const _sfc_setup$e = _sfc_main$e.setup;
-_sfc_main$e.setup = (props, ctx) => {
+const _sfc_setup$i = _sfc_main$i.setup;
+_sfc_main$i.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter01/1.vue");
-  return _sfc_setup$e ? _sfc_setup$e(props, ctx) : void 0;
+  return _sfc_setup$i ? _sfc_setup$i(props, ctx) : void 0;
 };
-const _1$4 = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["ssrRender", _sfc_ssrRender$e]]);
+const _1$4 = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["ssrRender", _sfc_ssrRender$i]]);
 const _1$5 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": _1$4
 });
-const _sfc_main$d = vue_cjs_prod.defineComponent({
+const _sfc_main$h = vue_cjs_prod.defineComponent({
   components: {
     designingmath: __nuxt_component_0$1
   },
@@ -4598,7 +4842,7 @@ const _sfc_main$d = vue_cjs_prod.defineComponent({
     }
   }
 });
-function _sfc_ssrRender$d(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$h(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_designingmath = __nuxt_component_0$1;
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}><p>Chapter 1 1-2 touchStart</p>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_designingmath, {
@@ -4610,19 +4854,19 @@ function _sfc_ssrRender$d(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
   }, null, _parent));
   _push(`</div>`);
 }
-const _sfc_setup$d = _sfc_main$d.setup;
-_sfc_main$d.setup = (props, ctx) => {
+const _sfc_setup$h = _sfc_main$h.setup;
+_sfc_main$h.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter01/2.vue");
-  return _sfc_setup$d ? _sfc_setup$d(props, ctx) : void 0;
+  return _sfc_setup$h ? _sfc_setup$h(props, ctx) : void 0;
 };
-const _2$2 = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["ssrRender", _sfc_ssrRender$d]]);
-const _2$3 = /* @__PURE__ */ Object.freeze({
+const _2$4 = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["ssrRender", _sfc_ssrRender$h]]);
+const _2$5 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
-  "default": _2$2
+  "default": _2$4
 });
-const _sfc_main$c = vue_cjs_prod.defineComponent({
+const _sfc_main$g = vue_cjs_prod.defineComponent({
   components: {
     designingmath: __nuxt_component_0$1
   },
@@ -4650,7 +4894,7 @@ const _sfc_main$c = vue_cjs_prod.defineComponent({
     }
   }
 });
-function _sfc_ssrRender$c(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$g(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_designingmath = __nuxt_component_0$1;
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}><p>Chapter 2 2-1 \u76F4\u7DDA\u3092\u63CF\u304F</p>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_designingmath, {
@@ -4662,19 +4906,19 @@ function _sfc_ssrRender$c(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
   }, null, _parent));
   _push(`</div>`);
 }
-const _sfc_setup$c = _sfc_main$c.setup;
-_sfc_main$c.setup = (props, ctx) => {
+const _sfc_setup$g = _sfc_main$g.setup;
+_sfc_main$g.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter02/1.vue");
-  return _sfc_setup$c ? _sfc_setup$c(props, ctx) : void 0;
+  return _sfc_setup$g ? _sfc_setup$g(props, ctx) : void 0;
 };
-const _1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["ssrRender", _sfc_ssrRender$c]]);
+const _1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["ssrRender", _sfc_ssrRender$g]]);
 const _1$3 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": _1$2
 });
-const _sfc_main$b = vue_cjs_prod.defineComponent({
+const _sfc_main$f = vue_cjs_prod.defineComponent({
   components: {
     designingmath: __nuxt_component_0$1
   },
@@ -4710,7 +4954,7 @@ const _sfc_main$b = vue_cjs_prod.defineComponent({
     }
   }
 });
-function _sfc_ssrRender$b(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$f(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_designingmath = __nuxt_component_0$1;
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}><p>Chapter 2 2-2 \u753B\u9762\u30B5\u30A4\u30BA\u3001\u7DDA\u3092\u3064\u306A\u3052\u308B</p>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_designingmath, {
@@ -4722,19 +4966,19 @@ function _sfc_ssrRender$b(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
   }, null, _parent));
   _push(`</div>`);
 }
-const _sfc_setup$b = _sfc_main$b.setup;
-_sfc_main$b.setup = (props, ctx) => {
+const _sfc_setup$f = _sfc_main$f.setup;
+_sfc_main$f.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter02/2.vue");
-  return _sfc_setup$b ? _sfc_setup$b(props, ctx) : void 0;
+  return _sfc_setup$f ? _sfc_setup$f(props, ctx) : void 0;
 };
-const _2 = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["ssrRender", _sfc_ssrRender$b]]);
-const _2$1 = /* @__PURE__ */ Object.freeze({
+const _2$2 = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["ssrRender", _sfc_ssrRender$f]]);
+const _2$3 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
-  "default": _2
+  "default": _2$2
 });
-const _sfc_main$a = vue_cjs_prod.defineComponent({
+const _sfc_main$e = vue_cjs_prod.defineComponent({
   components: {
     designingmath: __nuxt_component_0$1
   },
@@ -4769,7 +5013,7 @@ const _sfc_main$a = vue_cjs_prod.defineComponent({
     }
   }
 });
-function _sfc_ssrRender$a(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$e(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_designingmath = __nuxt_component_0$1;
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}><p>Chapter 2 2-3 \u3044\u308D\u3044\u308D\u306A\u7DDA\u3092\u63CF\u304F</p>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_designingmath, {
@@ -4781,19 +5025,19 @@ function _sfc_ssrRender$a(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
   }, null, _parent));
   _push(`</div>`);
 }
-const _sfc_setup$a = _sfc_main$a.setup;
-_sfc_main$a.setup = (props, ctx) => {
+const _sfc_setup$e = _sfc_main$e.setup;
+_sfc_main$e.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter02/3.vue");
-  return _sfc_setup$a ? _sfc_setup$a(props, ctx) : void 0;
+  return _sfc_setup$e ? _sfc_setup$e(props, ctx) : void 0;
 };
-const _3 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["ssrRender", _sfc_ssrRender$a]]);
-const _3$1 = /* @__PURE__ */ Object.freeze({
+const _3$2 = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["ssrRender", _sfc_ssrRender$e]]);
+const _3$3 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
-  "default": _3
+  "default": _3$2
 });
-const _sfc_main$9 = vue_cjs_prod.defineComponent({
+const _sfc_main$d = vue_cjs_prod.defineComponent({
   components: {
     designingmath: __nuxt_component_0$1
   },
@@ -4827,7 +5071,7 @@ const _sfc_main$9 = vue_cjs_prod.defineComponent({
     }
   }
 });
-function _sfc_ssrRender$9(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$d(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_designingmath = __nuxt_component_0$1;
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}><p>Chapter 2 2-4 \u3044\u308D\u3044\u308D\u306A\u5F62\u3092\u63CF\u304F</p>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_designingmath, {
@@ -4839,19 +5083,19 @@ function _sfc_ssrRender$9(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
   }, null, _parent));
   _push(`</div>`);
 }
-const _sfc_setup$9 = _sfc_main$9.setup;
-_sfc_main$9.setup = (props, ctx) => {
+const _sfc_setup$d = _sfc_main$d.setup;
+_sfc_main$d.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter02/4.vue");
-  return _sfc_setup$9 ? _sfc_setup$9(props, ctx) : void 0;
+  return _sfc_setup$d ? _sfc_setup$d(props, ctx) : void 0;
 };
-const _4 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["ssrRender", _sfc_ssrRender$9]]);
-const _4$1 = /* @__PURE__ */ Object.freeze({
+const _4$2 = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["ssrRender", _sfc_ssrRender$d]]);
+const _4$3 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
-  "default": _4
+  "default": _4$2
 });
-const _sfc_main$8 = vue_cjs_prod.defineComponent({
+const _sfc_main$c = vue_cjs_prod.defineComponent({
   components: {
     designingmath: __nuxt_component_0$1
   },
@@ -4893,7 +5137,7 @@ const _sfc_main$8 = vue_cjs_prod.defineComponent({
     }
   }
 });
-function _sfc_ssrRender$8(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$c(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_designingmath = __nuxt_component_0$1;
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}><p>Chapter 2 2-5 \u8272\u306E\u8A2D\u5B9A</p>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_designingmath, {
@@ -4905,19 +5149,19 @@ function _sfc_ssrRender$8(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
   }, null, _parent));
   _push(`</div>`);
 }
-const _sfc_setup$8 = _sfc_main$8.setup;
-_sfc_main$8.setup = (props, ctx) => {
+const _sfc_setup$c = _sfc_main$c.setup;
+_sfc_main$c.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter02/5.vue");
-  return _sfc_setup$8 ? _sfc_setup$8(props, ctx) : void 0;
+  return _sfc_setup$c ? _sfc_setup$c(props, ctx) : void 0;
 };
-const _5 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["ssrRender", _sfc_ssrRender$8]]);
-const _5$1 = /* @__PURE__ */ Object.freeze({
+const _5$2 = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["ssrRender", _sfc_ssrRender$c]]);
+const _5$3 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
-  "default": _5
+  "default": _5$2
 });
-const _sfc_main$7 = vue_cjs_prod.defineComponent({
+const _sfc_main$b = vue_cjs_prod.defineComponent({
   components: {
     designingmath: __nuxt_component_0$1
   },
@@ -4955,7 +5199,7 @@ const _sfc_main$7 = vue_cjs_prod.defineComponent({
     }
   }
 });
-function _sfc_ssrRender$7(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$b(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_designingmath = __nuxt_component_0$1;
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}><p>Chapter 2 2-6 \u6587\u5B57\u3092\u63CF\u304F</p>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_designingmath, {
@@ -4967,19 +5211,19 @@ function _sfc_ssrRender$7(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
   }, null, _parent));
   _push(`</div>`);
 }
-const _sfc_setup$7 = _sfc_main$7.setup;
-_sfc_main$7.setup = (props, ctx) => {
+const _sfc_setup$b = _sfc_main$b.setup;
+_sfc_main$b.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter02/6.vue");
-  return _sfc_setup$7 ? _sfc_setup$7(props, ctx) : void 0;
+  return _sfc_setup$b ? _sfc_setup$b(props, ctx) : void 0;
 };
-const _6 = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["ssrRender", _sfc_ssrRender$7]]);
+const _6 = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["ssrRender", _sfc_ssrRender$b]]);
 const _6$1 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": _6
 });
-const _sfc_main$6 = vue_cjs_prod.defineComponent({
+const _sfc_main$a = vue_cjs_prod.defineComponent({
   components: {
     designingmath: __nuxt_component_0$1
   },
@@ -5007,7 +5251,7 @@ const _sfc_main$6 = vue_cjs_prod.defineComponent({
     }
   }
 });
-function _sfc_ssrRender$6(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$a(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_designingmath = __nuxt_component_0$1;
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}><p>Chapter 2 2-7 \u52D5\u304D\u306E\u8868\u73FE\u3001\u6307\u306E\u4F4D\u7F6E</p>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_designingmath, {
@@ -5019,19 +5263,19 @@ function _sfc_ssrRender$6(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
   }, null, _parent));
   _push(`</div>`);
 }
-const _sfc_setup$6 = _sfc_main$6.setup;
-_sfc_main$6.setup = (props, ctx) => {
+const _sfc_setup$a = _sfc_main$a.setup;
+_sfc_main$a.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter02/7.vue");
-  return _sfc_setup$6 ? _sfc_setup$6(props, ctx) : void 0;
+  return _sfc_setup$a ? _sfc_setup$a(props, ctx) : void 0;
 };
-const _7 = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["ssrRender", _sfc_ssrRender$6]]);
+const _7 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["ssrRender", _sfc_ssrRender$a]]);
 const _7$1 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": _7
 });
-const _sfc_main$5 = vue_cjs_prod.defineComponent({
+const _sfc_main$9 = vue_cjs_prod.defineComponent({
   components: {
     designingmath: __nuxt_component_0$1
   },
@@ -5061,7 +5305,7 @@ const _sfc_main$5 = vue_cjs_prod.defineComponent({
     }
   }
 });
-function _sfc_ssrRender$5(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$9(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_designingmath = __nuxt_component_0$1;
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}><p>Chapter 2 2-8 \u30BF\u30C3\u30C1\u306E\u72B6\u614B</p>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_designingmath, {
@@ -5073,19 +5317,19 @@ function _sfc_ssrRender$5(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
   }, null, _parent));
   _push(`</div>`);
 }
-const _sfc_setup$5 = _sfc_main$5.setup;
-_sfc_main$5.setup = (props, ctx) => {
+const _sfc_setup$9 = _sfc_main$9.setup;
+_sfc_main$9.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter02/8.vue");
-  return _sfc_setup$5 ? _sfc_setup$5(props, ctx) : void 0;
+  return _sfc_setup$9 ? _sfc_setup$9(props, ctx) : void 0;
 };
-const _8 = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["ssrRender", _sfc_ssrRender$5]]);
+const _8 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["ssrRender", _sfc_ssrRender$9]]);
 const _8$1 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": _8
 });
-const _sfc_main$4 = vue_cjs_prod.defineComponent({
+const _sfc_main$8 = vue_cjs_prod.defineComponent({
   components: {
     designingmath: __nuxt_component_0$1
   },
@@ -5117,7 +5361,7 @@ const _sfc_main$4 = vue_cjs_prod.defineComponent({
     }
   }
 });
-function _sfc_ssrRender$4(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$8(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_designingmath = __nuxt_component_0$1;
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}><p>Chapter 2 2-9 \u30BF\u30C3\u30C1\u30A4\u30D9\u30F3\u30C8</p>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_designingmath, {
@@ -5129,24 +5373,24 @@ function _sfc_ssrRender$4(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
   }, null, _parent));
   _push(`</div>`);
 }
-const _sfc_setup$4 = _sfc_main$4.setup;
-_sfc_main$4.setup = (props, ctx) => {
+const _sfc_setup$8 = _sfc_main$8.setup;
+_sfc_main$8.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter02/9.vue");
-  return _sfc_setup$4 ? _sfc_setup$4(props, ctx) : void 0;
+  return _sfc_setup$8 ? _sfc_setup$8(props, ctx) : void 0;
 };
-const _9 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["ssrRender", _sfc_ssrRender$4]]);
+const _9 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["ssrRender", _sfc_ssrRender$8]]);
 const _9$1 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": _9
 });
-const unitKazu = 16;
-const unitSize = 60;
-const xOffset = unitSize / 2;
-const yOffset = unitSize / 2;
-const hankei = unitSize / 2;
-const _sfc_main$3 = vue_cjs_prod.defineComponent({
+const unitKazu$4 = 16;
+const unitSize$4 = 60;
+const offsetX$4 = 0;
+const offsetY$4 = 0;
+const hankei = unitSize$4 / 2;
+const _sfc_main$7 = vue_cjs_prod.defineComponent({
   components: {
     designingmath: __nuxt_component_0$1
   },
@@ -5155,11 +5399,11 @@ const _sfc_main$3 = vue_cjs_prod.defineComponent({
   methods: {
     setupFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
       console.log("setupFunc");
-      [...Array(unitKazu).keys()].forEach((tateNum) => [...Array(unitKazu).keys()].forEach((yokoNum) => {
-        const x = unitSize * yokoNum + xOffset;
-        const y = unitSize * tateNum + yOffset;
+      [...Array(unitKazu$4).keys()].forEach((tateNum) => [...Array(unitKazu$4).keys()].forEach((yokoNum) => {
+        const x = unitSize$4 * yokoNum + offsetX$4;
+        const y = unitSize$4 * tateNum + offsetY$4;
         ctx.beginPath();
-        ctx.arc(x, y, hankei, 0, Math.PI * 2, true);
+        ctx.arc(x + hankei, y + hankei, hankei, 0, Math.PI * 2, true);
         ctx.fill();
       }));
     },
@@ -5177,9 +5421,281 @@ const _sfc_main$3 = vue_cjs_prod.defineComponent({
     }
   }
 });
-function _sfc_ssrRender$3(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$7(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_designingmath = __nuxt_component_0$1;
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}><p>Chapter 3 3-1 \u7E26\u6A2A\u306B\u25CF\u3092\u4E26\u3079\u308B</p>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_designingmath, {
+    setupFunc: _ctx.setupFunc,
+    loopFunc: _ctx.loopFunc,
+    touchOrMouseStartFunc: _ctx.touchOrMouseStartFunc,
+    touchOrMouseEndFunc: _ctx.touchOrMouseEndFunc,
+    touchOrMouseMoveFunc: _ctx.touchOrMouseMoveFunc
+  }, null, _parent));
+  _push(`</div>`);
+}
+const _sfc_setup$7 = _sfc_main$7.setup;
+_sfc_main$7.setup = (props, ctx) => {
+  const ssrContext = vue_cjs_prod.useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter03/1.vue");
+  return _sfc_setup$7 ? _sfc_setup$7(props, ctx) : void 0;
+};
+const _1 = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["ssrRender", _sfc_ssrRender$7]]);
+const _1$1 = /* @__PURE__ */ Object.freeze({
+  __proto__: null,
+  [Symbol.toStringTag]: "Module",
+  "default": _1
+});
+const unitKazu$3 = 16;
+var unitSize$3;
+var offsetX$3;
+var offsetY$3;
+const _sfc_main$6 = vue_cjs_prod.defineComponent({
+  components: {
+    designingmath: __nuxt_component_0$1
+  },
+  setup() {
+  },
+  methods: {
+    setupFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("setupFunc");
+      unitSize$3 = Math.min(screenWidth, screenHeight) / unitKazu$3;
+      const totalLength = unitSize$3 * unitKazu$3;
+      offsetX$3 = (screenWidth - totalLength) / 2;
+      offsetY$3 = (screenHeight - totalLength) / 2;
+      const hankei2 = unitSize$3 / 2;
+      [...Array(unitKazu$3).keys()].forEach((tateNum) => [...Array(unitKazu$3).keys()].forEach((yokoNum) => {
+        const x = unitSize$3 * yokoNum + offsetX$3;
+        const y = unitSize$3 * tateNum + offsetY$3;
+        ctx.beginPath();
+        ctx.arc(x + hankei2, y + hankei2, hankei2, 0, Math.PI * 2, true);
+        ctx.fill();
+      }));
+    },
+    loopFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("loopFunc");
+    },
+    touchOrMouseStartFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("touchOrMouseStartFunc");
+    },
+    touchOrMouseMoveFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("touchOrMouseMoveFunc");
+    },
+    touchOrMouseEndFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("touchOrMouseEndFunc");
+    }
+  }
+});
+function _sfc_ssrRender$6(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+  const _component_designingmath = __nuxt_component_0$1;
+  _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}><p>Chapter 3 3-2 \u30A8\u30EA\u30A2\u5185\u306B\u3074\u3063\u305F\u308A\u53CE\u3081\u308B</p>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_designingmath, {
+    setupFunc: _ctx.setupFunc,
+    loopFunc: _ctx.loopFunc,
+    touchOrMouseStartFunc: _ctx.touchOrMouseStartFunc,
+    touchOrMouseEndFunc: _ctx.touchOrMouseEndFunc,
+    touchOrMouseMoveFunc: _ctx.touchOrMouseMoveFunc
+  }, null, _parent));
+  _push(`</div>`);
+}
+const _sfc_setup$6 = _sfc_main$6.setup;
+_sfc_main$6.setup = (props, ctx) => {
+  const ssrContext = vue_cjs_prod.useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter03/2.vue");
+  return _sfc_setup$6 ? _sfc_setup$6(props, ctx) : void 0;
+};
+const _2 = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["ssrRender", _sfc_ssrRender$6]]);
+const _2$1 = /* @__PURE__ */ Object.freeze({
+  __proto__: null,
+  [Symbol.toStringTag]: "Module",
+  "default": _2
+});
+const unitKazu$2 = 16;
+var unitSize$2;
+var offsetX$2;
+var offsetY$2;
+const _sfc_main$5 = vue_cjs_prod.defineComponent({
+  components: {
+    designingmath: __nuxt_component_0$1
+  },
+  setup() {
+  },
+  methods: {
+    setupFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("setupFunc");
+      unitSize$2 = Math.min(screenWidth, screenHeight) / unitKazu$2;
+      const totalLength = unitSize$2 * unitKazu$2;
+      offsetX$2 = (screenWidth - totalLength) / 2;
+      offsetY$2 = (screenHeight - totalLength) / 2;
+      const hankei2 = unitSize$2 / 2;
+      var idx = 0;
+      [...Array(unitKazu$2).keys()].forEach((tateNum) => [...Array(unitKazu$2).keys()].forEach((yokoNum) => {
+        const par1 = idx++ % (unitKazu$2 + 1) / unitKazu$2;
+        const x = unitSize$2 * yokoNum + offsetX$2;
+        const y = unitSize$2 * tateNum + offsetY$2;
+        ctx.beginPath();
+        ctx.arc(x + hankei2, y + hankei2, par1 * hankei2, 0, Math.PI * 2, true);
+        ctx.fill();
+      }));
+    },
+    loopFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("loopFunc");
+    },
+    touchOrMouseStartFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("touchOrMouseStartFunc");
+    },
+    touchOrMouseMoveFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("touchOrMouseMoveFunc");
+    },
+    touchOrMouseEndFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("touchOrMouseEndFunc");
+    }
+  }
+});
+function _sfc_ssrRender$5(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+  const _component_designingmath = __nuxt_component_0$1;
+  _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}><p>Chapter 3 3-3 \u5F90\u3005\u306B\u5927\u304D\u3055\u3092\u5909\u3048\u308B</p>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_designingmath, {
+    setupFunc: _ctx.setupFunc,
+    loopFunc: _ctx.loopFunc,
+    touchOrMouseStartFunc: _ctx.touchOrMouseStartFunc,
+    touchOrMouseEndFunc: _ctx.touchOrMouseEndFunc,
+    touchOrMouseMoveFunc: _ctx.touchOrMouseMoveFunc
+  }, null, _parent));
+  _push(`</div>`);
+}
+const _sfc_setup$5 = _sfc_main$5.setup;
+_sfc_main$5.setup = (props, ctx) => {
+  const ssrContext = vue_cjs_prod.useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter03/3.vue");
+  return _sfc_setup$5 ? _sfc_setup$5(props, ctx) : void 0;
+};
+const _3 = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["ssrRender", _sfc_ssrRender$5]]);
+const _3$1 = /* @__PURE__ */ Object.freeze({
+  __proto__: null,
+  [Symbol.toStringTag]: "Module",
+  "default": _3
+});
+const unitKazu$1 = 16;
+var unitSize$1;
+var offsetX$1;
+var offsetY$1;
+var startTime$1;
+const _sfc_main$4 = vue_cjs_prod.defineComponent({
+  components: {
+    designingmath: __nuxt_component_0$1
+  },
+  setup() {
+  },
+  methods: {
+    setupFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("setupFunc");
+      unitSize$1 = Math.min(screenWidth, screenHeight) / unitKazu$1;
+      startTime$1 = new Date().getTime();
+    },
+    loopFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("loopFunc");
+      ctx.clearRect(0, 0, screenWidth, screenHeight);
+      const par2 = (new Date().getTime() - startTime$1) % 1e3 / 999;
+      const totalLength = unitSize$1 * unitKazu$1;
+      offsetX$1 = (screenWidth - totalLength) / 2;
+      offsetY$1 = (screenHeight - totalLength) / 2;
+      const hankei2 = unitSize$1 / 2;
+      var idx = 0;
+      [...Array(unitKazu$1).keys()].forEach((tateNum) => [...Array(unitKazu$1).keys()].forEach((yokoNum) => {
+        const par1 = idx++ % (unitKazu$1 + 1) / unitKazu$1;
+        const x = unitSize$1 * yokoNum + offsetX$1;
+        const y = unitSize$1 * tateNum + offsetY$1;
+        ctx.beginPath();
+        ctx.arc(x + hankei2, y + hankei2, (par1 + par2) * hankei2 % hankei2 + 1, 0, Math.PI * 2, true);
+        ctx.fill();
+      }));
+    },
+    touchOrMouseStartFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("touchOrMouseStartFunc");
+    },
+    touchOrMouseMoveFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("touchOrMouseMoveFunc");
+    },
+    touchOrMouseEndFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("touchOrMouseEndFunc");
+    }
+  }
+});
+function _sfc_ssrRender$4(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+  const _component_designingmath = __nuxt_component_0$1;
+  _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}><p>Chapter 3 3-4 \u6642\u9593\u306B\u6CBF\u3063\u3066\u5927\u304D\u3055\u3092\u52D5\u304B\u3059</p>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_designingmath, {
+    setupFunc: _ctx.setupFunc,
+    loopFunc: _ctx.loopFunc,
+    touchOrMouseStartFunc: _ctx.touchOrMouseStartFunc,
+    touchOrMouseEndFunc: _ctx.touchOrMouseEndFunc,
+    touchOrMouseMoveFunc: _ctx.touchOrMouseMoveFunc
+  }, null, _parent));
+  _push(`</div>`);
+}
+const _sfc_setup$4 = _sfc_main$4.setup;
+_sfc_main$4.setup = (props, ctx) => {
+  const ssrContext = vue_cjs_prod.useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter03/4.vue");
+  return _sfc_setup$4 ? _sfc_setup$4(props, ctx) : void 0;
+};
+const _4 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["ssrRender", _sfc_ssrRender$4]]);
+const _4$1 = /* @__PURE__ */ Object.freeze({
+  __proto__: null,
+  [Symbol.toStringTag]: "Module",
+  "default": _4
+});
+const unitKazu = 16;
+var unitSize;
+var offsetX;
+var offsetY;
+var startTime;
+const _sfc_main$3 = vue_cjs_prod.defineComponent({
+  components: {
+    designingmath: __nuxt_component_0$1
+  },
+  setup() {
+  },
+  methods: {
+    setupFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("setupFunc");
+      unitSize = Math.min(screenWidth, screenHeight) / unitKazu;
+      startTime = new Date().getTime();
+    },
+    loopFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("loopFunc");
+      ctx.clearRect(0, 0, screenWidth, screenHeight);
+      const par2 = (new Date().getTime() - startTime) % 1e3 / 999;
+      const totalLength = unitSize * unitKazu;
+      offsetX = (screenWidth - totalLength) / 2;
+      offsetY = (screenHeight - totalLength) / 2;
+      const hankei2 = unitSize / 2;
+      var idx = 0;
+      [...Array(unitKazu).keys()].forEach((tateNum) => [...Array(unitKazu).keys()].forEach((yokoNum) => {
+        const par1 = idx++ % (unitKazu + 1) / unitKazu;
+        const parC = (par1 + par2) * 256 % 256;
+        ctx.fillStyle = `rgb(${parC},${parC},${parC})`;
+        const x = unitSize * yokoNum + offsetX;
+        const y = unitSize * tateNum + offsetY;
+        ctx.beginPath();
+        ctx.arc(x + hankei2, y + hankei2, (par1 + par2) * hankei2 % hankei2 + 1, 0, Math.PI * 2, true);
+        ctx.fill();
+      }));
+    },
+    touchOrMouseStartFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("touchOrMouseStartFunc");
+    },
+    touchOrMouseMoveFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("touchOrMouseMoveFunc");
+    },
+    touchOrMouseEndFunc(ctx, screenWidth, screenHeight, curYubiX, curYubiY, yubiTouched) {
+      console.log("touchOrMouseEndFunc");
+    }
+  }
+});
+function _sfc_ssrRender$3(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+  const _component_designingmath = __nuxt_component_0$1;
+  _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}><p>Chapter 3 3-5 \u8272\u3092\u5909\u3048\u308B</p>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_designingmath, {
     setupFunc: _ctx.setupFunc,
     loopFunc: _ctx.loopFunc,
@@ -5192,14 +5708,14 @@ function _sfc_ssrRender$3(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
 const _sfc_setup$3 = _sfc_main$3.setup;
 _sfc_main$3.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter03/1.vue");
+  (ssrContext.modules || (ssrContext.modules = new Set())).add("pages/chapter03/5.vue");
   return _sfc_setup$3 ? _sfc_setup$3(props, ctx) : void 0;
 };
-const _1 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["ssrRender", _sfc_ssrRender$3]]);
-const _1$1 = /* @__PURE__ */ Object.freeze({
+const _5 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["ssrRender", _sfc_ssrRender$3]]);
+const _5$1 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
-  "default": _1
+  "default": _5
 });
 const _sfc_main$2 = {};
 function _sfc_ssrRender$2(_ctx, _push, _parent, _attrs) {
