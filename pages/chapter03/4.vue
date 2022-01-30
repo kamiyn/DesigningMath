@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>Chapter 3 3-3 徐々に大きさを変える</p>
+    <p>Chapter 3 3-4 時間に沿って大きさを動かす</p>
     <designingmath
       :setupFunc="setupFunc"
       :loopFunc="loopFunc"
@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-/* http://localhost:3000/chapter03/3 */
+/* http://localhost:3000/chapter03/4 */
 import { defineComponent } from "vue";
 import designingmath from "@/components/designingmath.vue";
 
@@ -20,6 +20,7 @@ const unitKazu = 16;
 var unitSize: number;
 var offsetX: number;
 var offsetY: number;
+var startTime: number;
 
 export default defineComponent({
   components: {
@@ -37,6 +38,20 @@ export default defineComponent({
     ) {
       console.log("setupFunc");
       unitSize = Math.min(screenWidth, screenHeight) / unitKazu;
+      startTime = new Date().getTime(); // ミリ秒単位での UnixEpoch からの経過時間
+    },
+    loopFunc(
+      ctx: CanvasRenderingContext2D,
+      screenWidth: number,
+      screenHeight: number,
+      curYubiX: number,
+      curYubiY: number,
+      yubiTouched: boolean
+    ) {
+      console.log("loopFunc");
+      ctx.clearRect(0, 0, screenWidth, screenHeight);
+      const par2 = ((new Date().getTime() - startTime) % 1000) / 999; // ミリ秒単位で 0から1の間を変化する
+
       const totalLength = unitSize * unitKazu;
       offsetX = (screenWidth - totalLength) / 2;
       offsetY = (screenHeight - totalLength) / 2;
@@ -53,7 +68,7 @@ export default defineComponent({
           ctx.arc(
             x + hankei /* 配置用の半径は維持する */,
             y + hankei,
-            par1 * hankei /* 描画用の半径だけを変更する */,
+            (((par1 + par2) * hankei) % hankei) + 1 /* 描画用の半径 */,
             0,
             Math.PI * 2,
             true
@@ -61,16 +76,6 @@ export default defineComponent({
           ctx.fill();
         })
       );
-    },
-    loopFunc(
-      ctx: CanvasRenderingContext2D,
-      screenWidth: number,
-      screenHeight: number,
-      curYubiX: number,
-      curYubiY: number,
-      yubiTouched: boolean
-    ) {
-      console.log("loopFunc");
     },
     touchOrMouseStartFunc(
       ctx: CanvasRenderingContext2D,
