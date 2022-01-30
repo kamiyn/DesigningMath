@@ -1,14 +1,14 @@
 {
   "node_modules/nuxt3/dist/app/entry.mjs": {
-    "file": "entry-6ebff53d.mjs",
+    "file": "entry-f9e38997.mjs",
     "src": "node_modules/nuxt3/dist/app/entry.mjs",
     "isEntry": true,
     "dynamicImports": [
-      "_bootstrap-c494a676.mjs"
+      "_bootstrap-86595c19.mjs"
     ]
   },
-  "_bootstrap-c494a676.mjs": {
-    "file": "bootstrap-c494a676.mjs",
+  "_bootstrap-86595c19.mjs": {
+    "file": "bootstrap-86595c19.mjs",
     "isDynamicEntry": true,
     "dynamicImports": [
       "pages/chapter01/0.vue",
@@ -28,6 +28,14 @@
       "pages/chapter03/3.vue",
       "pages/chapter03/4.vue",
       "pages/chapter03/5.vue",
+      "pages/chapter04/1.vue",
+      "pages/chapter04/2.vue",
+      "pages/chapter04/3.vue",
+      "pages/chapter04/4.vue",
+      "pages/chapter04/5.vue",
+      "pages/chapter04/6.vue",
+      "pages/chapter04/7.vue",
+      "pages/chapter04/8.vue",
       "pages/index.vue",
       "pages/welcome.vue"
     ],
@@ -36,155 +44,219 @@
     ]
   },
   "pages/chapter01/0.vue": {
-    "file": "0-6697a9e2.mjs",
+    "file": "0-cf340efd.mjs",
     "src": "pages/chapter01/0.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_bootstrap-c494a676.mjs"
+      "_bootstrap-86595c19.mjs"
     ]
   },
   "pages/chapter01/1.vue": {
-    "file": "1-fb39eada.mjs",
+    "file": "1-9cba1744.mjs",
     "src": "pages/chapter01/1.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_bootstrap-c494a676.mjs"
+      "_bootstrap-86595c19.mjs"
     ]
   },
   "pages/chapter01/2.vue": {
-    "file": "2-f2ccf282.mjs",
+    "file": "2-09277723.mjs",
     "src": "pages/chapter01/2.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_bootstrap-c494a676.mjs"
+      "_bootstrap-86595c19.mjs"
     ]
   },
   "pages/chapter02/1.vue": {
-    "file": "1-e40f6a54.mjs",
+    "file": "1-2c3d23b3.mjs",
     "src": "pages/chapter02/1.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_bootstrap-c494a676.mjs"
+      "_bootstrap-86595c19.mjs"
     ]
   },
   "pages/chapter02/2.vue": {
-    "file": "2-e7c540a1.mjs",
+    "file": "2-3fee9fa6.mjs",
     "src": "pages/chapter02/2.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_bootstrap-c494a676.mjs"
+      "_bootstrap-86595c19.mjs"
     ]
   },
   "pages/chapter02/3.vue": {
-    "file": "3-843b6582.mjs",
+    "file": "3-ad753609.mjs",
     "src": "pages/chapter02/3.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_bootstrap-c494a676.mjs"
+      "_bootstrap-86595c19.mjs"
     ]
   },
   "pages/chapter02/4.vue": {
-    "file": "4-3f3ece0d.mjs",
+    "file": "4-7537cd63.mjs",
     "src": "pages/chapter02/4.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_bootstrap-c494a676.mjs"
+      "_bootstrap-86595c19.mjs"
     ]
   },
   "pages/chapter02/5.vue": {
-    "file": "5-d98fe4a4.mjs",
+    "file": "5-fd2a6454.mjs",
     "src": "pages/chapter02/5.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_bootstrap-c494a676.mjs"
+      "_bootstrap-86595c19.mjs"
     ]
   },
   "pages/chapter02/6.vue": {
-    "file": "6-dc232a31.mjs",
+    "file": "6-74de633f.mjs",
     "src": "pages/chapter02/6.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_bootstrap-c494a676.mjs"
+      "_bootstrap-86595c19.mjs"
     ]
   },
   "pages/chapter02/7.vue": {
-    "file": "7-a9d2eb36.mjs",
+    "file": "7-21409614.mjs",
     "src": "pages/chapter02/7.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_bootstrap-c494a676.mjs"
+      "_bootstrap-86595c19.mjs"
     ]
   },
   "pages/chapter02/8.vue": {
-    "file": "8-d4c10374.mjs",
+    "file": "8-d4d9cd09.mjs",
     "src": "pages/chapter02/8.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_bootstrap-c494a676.mjs"
+      "_bootstrap-86595c19.mjs"
     ]
   },
   "pages/chapter02/9.vue": {
-    "file": "9-7689867e.mjs",
+    "file": "9-010ae69b.mjs",
     "src": "pages/chapter02/9.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_bootstrap-c494a676.mjs"
+      "_bootstrap-86595c19.mjs"
     ]
   },
   "pages/chapter03/1.vue": {
-    "file": "1-ea8f3403.mjs",
+    "file": "1-9e29d2f0.mjs",
     "src": "pages/chapter03/1.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_bootstrap-c494a676.mjs"
+      "_bootstrap-86595c19.mjs"
     ]
   },
   "pages/chapter03/2.vue": {
-    "file": "2-ba1d8ca0.mjs",
+    "file": "2-d42b1c0a.mjs",
     "src": "pages/chapter03/2.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_bootstrap-c494a676.mjs"
+      "_bootstrap-86595c19.mjs"
     ]
   },
   "pages/chapter03/3.vue": {
-    "file": "3-a5cbab96.mjs",
+    "file": "3-f6fc8894.mjs",
     "src": "pages/chapter03/3.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_bootstrap-c494a676.mjs"
+      "_bootstrap-86595c19.mjs"
     ]
   },
   "pages/chapter03/4.vue": {
-    "file": "4-b888191a.mjs",
+    "file": "4-6d025adc.mjs",
     "src": "pages/chapter03/4.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_bootstrap-c494a676.mjs"
+      "_bootstrap-86595c19.mjs"
     ]
   },
   "pages/chapter03/5.vue": {
-    "file": "5-f855fe44.mjs",
+    "file": "5-9099ad52.mjs",
     "src": "pages/chapter03/5.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_bootstrap-c494a676.mjs"
+      "_bootstrap-86595c19.mjs"
+    ]
+  },
+  "pages/chapter04/1.vue": {
+    "file": "1-1193d1d2.mjs",
+    "src": "pages/chapter04/1.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_bootstrap-86595c19.mjs"
+    ]
+  },
+  "pages/chapter04/2.vue": {
+    "file": "2-4d8d31f4.mjs",
+    "src": "pages/chapter04/2.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_bootstrap-86595c19.mjs"
+    ]
+  },
+  "pages/chapter04/3.vue": {
+    "file": "3-8aedcd5e.mjs",
+    "src": "pages/chapter04/3.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_bootstrap-86595c19.mjs"
+    ]
+  },
+  "pages/chapter04/4.vue": {
+    "file": "4-3e6ef44a.mjs",
+    "src": "pages/chapter04/4.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_bootstrap-86595c19.mjs"
+    ]
+  },
+  "pages/chapter04/5.vue": {
+    "file": "5-e6a4fee8.mjs",
+    "src": "pages/chapter04/5.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_bootstrap-86595c19.mjs"
+    ]
+  },
+  "pages/chapter04/6.vue": {
+    "file": "6-5d2831e0.mjs",
+    "src": "pages/chapter04/6.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_bootstrap-86595c19.mjs"
+    ]
+  },
+  "pages/chapter04/7.vue": {
+    "file": "7-5c0490be.mjs",
+    "src": "pages/chapter04/7.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_bootstrap-86595c19.mjs"
+    ]
+  },
+  "pages/chapter04/8.vue": {
+    "file": "8-95351b0a.mjs",
+    "src": "pages/chapter04/8.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_bootstrap-86595c19.mjs"
     ]
   },
   "pages/index.vue": {
-    "file": "index-7f6f7e63.mjs",
+    "file": "index-405fb460.mjs",
     "src": "pages/index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_bootstrap-c494a676.mjs"
+      "_bootstrap-86595c19.mjs"
     ]
   },
   "pages/welcome.vue": {
-    "file": "welcome-13fc6c22.mjs",
+    "file": "welcome-044c198c.mjs",
     "src": "pages/welcome.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_bootstrap-c494a676.mjs"
+      "_bootstrap-86595c19.mjs"
     ]
   }
 }
