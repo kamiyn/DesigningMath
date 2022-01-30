@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>Chapter 3 3-1 縦横に●を並べる</p>
+    <p>Chapter 3 3-2 エリア内にぴったり収める</p>
     <designingmath
       :setupFunc="setupFunc"
       :loopFunc="loopFunc"
@@ -12,15 +12,14 @@
 </template>
 
 <script lang="ts">
-/* http://localhost:3000/chapter03/1 */
+/* http://localhost:3000/chapter03/2 */
 import { defineComponent } from "vue";
 import designingmath from "@/components/designingmath.vue";
 
 const unitKazu = 16;
-const unitSize = 60;
-const offsetX = 0;
-const offsetY = 0;
-const hankei = unitSize / 2;
+var unitSize: number;
+var offsetX: number;
+var offsetY: number;
 
 export default defineComponent({
   components: {
@@ -37,8 +36,12 @@ export default defineComponent({
       yubiTouched: boolean
     ) {
       console.log("setupFunc");
-      // 本では loop に書いているが1回でよい
-      // 縦方向と横方向の二重ループの方がやりたいことに沿っていると思われるため 一重ループと商・剰余 の組み合わせから変更した
+      unitSize = Math.min(screenWidth, screenHeight) / unitKazu;
+      const totalLength = unitSize * unitKazu;
+      offsetX = (screenWidth - totalLength) / 2;
+      offsetY = (screenHeight - totalLength) / 2;
+      const hankei = unitSize / 2;
+
       [...Array(unitKazu).keys()].forEach((tateNum) =>
         [...Array(unitKazu).keys()].forEach((yokoNum) => {
           const x = unitSize * yokoNum + offsetX;
