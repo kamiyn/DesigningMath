@@ -69,7 +69,7 @@ export default defineComponent({
       });
 
       // 描画
-      ctx.clearRect(0, 0, screenWidth, screenWidth);
+      ctx.clearRect(0, 0, screenWidth, screenHeight);
       // ベジエ曲線の描画
       ctx.beginPath();
       ctx.lineWidth = 4;
