@@ -77,8 +77,7 @@ export default defineComponent({
       ctx.clearRect(0, 0, screenWidth, screenHeight);
       maruArrArr.forEach((maruY) =>
         maruY.forEach((maru) => {
-          const par = Math.min(maru.kyori(curYubiX, curYubiY) / screenSize, 1); // 1は超えない
-          const parR = 1 - par;
+          const parR = Math.max(1 - maru.kyori(curYubiX, curYubiY) / screenSize, 0); // 0以上にする
           const hankei = (unitKyori / 2) * parR;
           ctx.strokeStyle = "black";
           ctx.lineWidth = 2;
