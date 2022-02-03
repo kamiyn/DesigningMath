@@ -1,4 +1,7 @@
 import { v as vue_cjs_prod, r as require$$0, s as serverRenderer } from '../index.mjs';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import 'unenv/runtime/mock/proxy';
 import 'stream';
 
@@ -291,7 +294,7 @@ async function applyPlugin(nuxtApp, plugin) {
   if (typeof plugin !== "function") {
     return;
   }
-  const { provide } = await callWithNuxt(nuxtApp, () => plugin(nuxtApp)) || {};
+  const { provide } = await callWithNuxt(nuxtApp, plugin, [nuxtApp]) || {};
   if (provide && typeof provide === "object") {
     for (const key in provide) {
       nuxtApp.provide(key, provide[key]);
@@ -332,9 +335,9 @@ let currentNuxtAppInstance;
 const setNuxtAppInstance = (nuxt) => {
   currentNuxtAppInstance = nuxt;
 };
-function callWithNuxt(nuxt, setup) {
+function callWithNuxt(nuxt, setup, args) {
   setNuxtAppInstance(nuxt);
-  const p = setup();
+  const p = args ? setup(...args) : setup();
   {
     setNuxtAppInstance(null);
   }
@@ -3037,190 +3040,35 @@ const _export_sfc = (sfc, props) => {
   }
   return target;
 };
-const _sfc_main$1Z = {
-  name: "NuxtNestedPage"
+const _sfc_main$1Y = {
+  name: "NuxtNestedPage",
+  props: {
+    childKey: {
+      type: [Function, String],
+      default: null
+    }
+  },
+  setup(props) {
+    const route = vueRouter_cjs_prod.useRoute();
+    const key = vue_cjs_prod.computed(() => {
+      var _a;
+      const source = (_a = props.childKey) != null ? _a : route.meta.key;
+      return typeof source === "function" ? source(route) : source;
+    });
+    return {
+      key
+    };
+  }
 };
-function _sfc_ssrRender$12(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$11(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_RouterView = vue_cjs_prod.resolveComponent("RouterView");
   _push(serverRenderer.exports.ssrRenderComponent(_component_RouterView, _attrs, {
     default: vue_cjs_prod.withCtx(({ Component }, _push2, _parent2, _scopeId) => {
       if (_push2) {
-        serverRenderer.exports.ssrRenderVNode(_push2, vue_cjs_prod.createVNode(vue_cjs_prod.resolveDynamicComponent(Component), {
-          key: _ctx.$route.path
-        }, null), _parent2, _scopeId);
+        serverRenderer.exports.ssrRenderVNode(_push2, vue_cjs_prod.createVNode(vue_cjs_prod.resolveDynamicComponent(Component), { key: $setup.key }, null), _parent2, _scopeId);
       } else {
         return [
-          (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock(vue_cjs_prod.resolveDynamicComponent(Component), {
-            key: _ctx.$route.path
-          }))
-        ];
-      }
-    }),
-    _: 1
-  }, _parent));
-}
-const _sfc_setup$1Z = _sfc_main$1Z.setup;
-_sfc_main$1Z.setup = (props, ctx) => {
-  const ssrContext = vue_cjs_prod.useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = new Set())).add("node_modules/nuxt3/dist/pages/runtime/nested-page.vue");
-  return _sfc_setup$1Z ? _sfc_setup$1Z(props, ctx) : void 0;
-};
-const NuxtNestedPage = /* @__PURE__ */ _export_sfc(_sfc_main$1Z, [["ssrRender", _sfc_ssrRender$12]]);
-const layouts = {};
-const NuxtLayout = vue_cjs_prod.defineComponent({
-  props: {
-    name: {
-      type: [String, Boolean, Object],
-      default: "default"
-    }
-  },
-  setup(props, context) {
-    return () => {
-      var _a;
-      const layout = (_a = props.name && typeof props.name === "object" ? props.name.value : props.name) != null ? _a : "default";
-      if (!layouts[layout]) {
-        return context.slots.default();
-      }
-      return vue_cjs_prod.h(layouts[layout], props, context.slots);
-    };
-  }
-});
-const NuxtTransition = vue_cjs_prod.defineComponent({
-  name: "NuxtTransition",
-  props: {
-    options: [Object, Boolean]
-  },
-  setup(props, { slots }) {
-    return () => props.options ? vue_cjs_prod.h(vue_cjs_prod.Transition, props.options, slots.default) : slots.default();
-  }
-});
-const _sfc_main$1Y = vue_cjs_prod.defineComponent({
-  name: "NuxtPage",
-  components: { NuxtLayout, NuxtTransition },
-  props: {
-    layout: {
-      type: String,
-      default: null
-    }
-  },
-  setup() {
-    const nuxtApp = useNuxtApp();
-    function onSuspensePending(Component) {
-      return nuxtApp.callHook("page:start", Component);
-    }
-    function onSuspenseResolved(Component) {
-      return nuxtApp.callHook("page:finish", Component);
-    }
-    return {
-      onSuspensePending,
-      onSuspenseResolved
-    };
-  }
-});
-function _sfc_ssrRender$11(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
-  const _component_RouterView = vue_cjs_prod.resolveComponent("RouterView");
-  const _component_NuxtLayout = vue_cjs_prod.resolveComponent("NuxtLayout");
-  const _component_NuxtTransition = vue_cjs_prod.resolveComponent("NuxtTransition");
-  _push(serverRenderer.exports.ssrRenderComponent(_component_RouterView, _attrs, {
-    default: vue_cjs_prod.withCtx(({ Component, route }, _push2, _parent2, _scopeId) => {
-      if (_push2) {
-        if (Component) {
-          _push2(serverRenderer.exports.ssrRenderComponent(_component_NuxtLayout, {
-            name: _ctx.layout || route.meta.layout
-          }, {
-            default: vue_cjs_prod.withCtx((_, _push3, _parent3, _scopeId2) => {
-              var _a, _b;
-              if (_push3) {
-                _push3(serverRenderer.exports.ssrRenderComponent(_component_NuxtTransition, {
-                  options: (_a = route.meta.transition) != null ? _a : { name: "page", mode: "out-in" }
-                }, {
-                  default: vue_cjs_prod.withCtx((_10, _push4, _parent4, _scopeId3) => {
-                    if (_push4) {
-                      serverRenderer.exports.ssrRenderSuspense(_push4, {
-                        default: () => {
-                          serverRenderer.exports.ssrRenderVNode(_push4, vue_cjs_prod.createVNode(vue_cjs_prod.resolveDynamicComponent(Component), {
-                            key: route.path
-                          }, null), _parent4, _scopeId3);
-                        },
-                        _: 2
-                      });
-                    } else {
-                      return [
-                        (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock(vue_cjs_prod.Suspense, {
-                          onPending: () => _ctx.onSuspensePending(Component),
-                          onResolve: () => _ctx.onSuspenseResolved(Component)
-                        }, {
-                          default: vue_cjs_prod.withCtx(() => [
-                            (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock(vue_cjs_prod.resolveDynamicComponent(Component), {
-                              key: route.path
-                            }))
-                          ]),
-                          _: 2
-                        }, 1032, ["onPending", "onResolve"]))
-                      ];
-                    }
-                  }),
-                  _: 2
-                }, _parent3, _scopeId2));
-              } else {
-                return [
-                  vue_cjs_prod.createVNode(_component_NuxtTransition, {
-                    options: (_b = route.meta.transition) != null ? _b : { name: "page", mode: "out-in" }
-                  }, {
-                    default: vue_cjs_prod.withCtx(() => [
-                      (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock(vue_cjs_prod.Suspense, {
-                        onPending: () => _ctx.onSuspensePending(Component),
-                        onResolve: () => _ctx.onSuspenseResolved(Component)
-                      }, {
-                        default: vue_cjs_prod.withCtx(() => [
-                          (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock(vue_cjs_prod.resolveDynamicComponent(Component), {
-                            key: route.path
-                          }))
-                        ]),
-                        _: 2
-                      }, 1032, ["onPending", "onResolve"]))
-                    ]),
-                    _: 2
-                  }, 1032, ["options"])
-                ];
-              }
-            }),
-            _: 2
-          }, _parent2, _scopeId));
-        } else {
-          _push2(`<!---->`);
-        }
-      } else {
-        return [
-          Component ? (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock(_component_NuxtLayout, {
-            key: 0,
-            name: _ctx.layout || route.meta.layout
-          }, {
-            default: vue_cjs_prod.withCtx(() => {
-              var _a;
-              return [
-                vue_cjs_prod.createVNode(_component_NuxtTransition, {
-                  options: (_a = route.meta.transition) != null ? _a : { name: "page", mode: "out-in" }
-                }, {
-                  default: vue_cjs_prod.withCtx(() => [
-                    (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock(vue_cjs_prod.Suspense, {
-                      onPending: () => _ctx.onSuspensePending(Component),
-                      onResolve: () => _ctx.onSuspenseResolved(Component)
-                    }, {
-                      default: vue_cjs_prod.withCtx(() => [
-                        (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock(vue_cjs_prod.resolveDynamicComponent(Component), {
-                          key: route.path
-                        }))
-                      ]),
-                      _: 2
-                    }, 1032, ["onPending", "onResolve"]))
-                  ]),
-                  _: 2
-                }, 1032, ["options"])
-              ];
-            }),
-            _: 2
-          }, 1032, ["name"])) : vue_cjs_prod.createCommentVNode("", true)
+          (vue_cjs_prod.openBlock(), vue_cjs_prod.createBlock(vue_cjs_prod.resolveDynamicComponent(Component), { key: $setup.key }))
         ];
       }
     }),
@@ -3230,10 +3078,58 @@ function _sfc_ssrRender$11(_ctx, _push, _parent, _attrs, $props, $setup, $data, 
 const _sfc_setup$1Y = _sfc_main$1Y.setup;
 _sfc_main$1Y.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = new Set())).add("node_modules/nuxt3/dist/pages/runtime/page.vue");
+  (ssrContext.modules || (ssrContext.modules = new Set())).add("node_modules/nuxt3/dist/pages/runtime/nested-page.vue");
   return _sfc_setup$1Y ? _sfc_setup$1Y(props, ctx) : void 0;
 };
-const NuxtPage = /* @__PURE__ */ _export_sfc(_sfc_main$1Y, [["ssrRender", _sfc_ssrRender$11]]);
+const NuxtNestedPage = /* @__PURE__ */ _export_sfc(_sfc_main$1Y, [["ssrRender", _sfc_ssrRender$11]]);
+const Fragment = {
+  setup(_props, { slots }) {
+    return () => slots.default();
+  }
+};
+const wrapIf = (component, props, slots) => {
+  return { default: () => props ? vue_cjs_prod.h(component, props === true ? {} : props, slots) : vue_cjs_prod.h(Fragment, {}, slots) };
+};
+const wrapInKeepAlive = (props, children) => {
+  return { default: () => children };
+};
+const NuxtPage = vue_cjs_prod.defineComponent({
+  name: "NuxtPage",
+  setup() {
+    const nuxtApp = useNuxtApp();
+    return () => {
+      return vue_cjs_prod.h(vueRouter_cjs_prod.RouterView, {}, {
+        default: ({ Component, route }) => {
+          var _a;
+          return Component && wrapIf(vue_cjs_prod.Transition, (_a = route.meta.pageTransition) != null ? _a : defaultPageTransition, wrapInKeepAlive(route.meta.keepalive, vue_cjs_prod.h(vue_cjs_prod.Suspense, {
+            onPending: () => nuxtApp.callHook("page:start", Component),
+            onResolve: () => nuxtApp.callHook("page:finish", Component)
+          }, { default: () => vue_cjs_prod.h(Component) }))).default();
+        }
+      });
+    };
+  }
+});
+const defaultPageTransition = { name: "page", mode: "out-in" };
+const layouts = {};
+const defaultLayoutTransition = { name: "layout", mode: "out-in" };
+const NuxtLayout = vue_cjs_prod.defineComponent({
+  props: {
+    name: {
+      type: [String, Boolean, Object],
+      default: null
+    }
+  },
+  setup(props, context) {
+    const route = vueRouter_cjs_prod.useRoute();
+    return () => {
+      var _a, _b, _c;
+      const layout = (_b = (_a = vue_cjs_prod.isRef(props.name) ? props.name.value : props.name) != null ? _a : route.meta.layout) != null ? _b : "default";
+      const hasLayout = layout && layout in layouts;
+      return wrapIf(vue_cjs_prod.Transition, hasLayout && ((_c = route.meta.layoutTransition) != null ? _c : defaultLayoutTransition), wrapIf(layouts[layout], hasLayout, context.slots)).default();
+    };
+  }
+});
 var timerId;
 const _sfc_main$1X = vue_cjs_prod.defineComponent({
   name: "designingmath",
@@ -8320,6 +8216,8 @@ const routes = [
     })
   }
 ];
+const globalMiddleware = [];
+const namedMiddleware = {};
 const router_0e1a838c = defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component("NuxtNestedPage", NuxtNestedPage);
   nuxtApp.vueApp.component("NuxtPage", NuxtPage);
@@ -8345,9 +8243,47 @@ const router_0e1a838c = defineNuxtPlugin((nuxtApp) => {
     route[key] = vue_cjs_prod.computed(() => router.currentRoute.value[key]);
   }
   nuxtApp._route = vue_cjs_prod.reactive(route);
+  nuxtApp._middleware = nuxtApp._middleware || {
+    global: [],
+    named: {}
+  };
+  router.beforeEach(async (to, from) => {
+    var _a;
+    to.meta = vue_cjs_prod.reactive(to.meta);
+    nuxtApp._processingMiddleware = true;
+    const middlewareEntries = new Set([...globalMiddleware, ...nuxtApp._middleware.global]);
+    for (const component of to.matched) {
+      const componentMiddleware = component.meta.middleware;
+      if (!componentMiddleware) {
+        continue;
+      }
+      if (Array.isArray(componentMiddleware)) {
+        for (const entry2 of componentMiddleware) {
+          middlewareEntries.add(entry2);
+        }
+      } else {
+        middlewareEntries.add(componentMiddleware);
+      }
+    }
+    for (const entry2 of middlewareEntries) {
+      const middleware = typeof entry2 === "string" ? nuxtApp._middleware.named[entry2] || await ((_a = namedMiddleware[entry2]) == null ? void 0 : _a.call(namedMiddleware).then((r) => r.default || r)) : entry2;
+      const result = await callWithNuxt(nuxtApp, middleware, [to, from]);
+      if (result || result === false) {
+        return result;
+      }
+    }
+  });
+  router.afterEach(() => {
+    delete nuxtApp._processingMiddleware;
+  });
   nuxtApp.hook("app:created", async () => {
     {
       router.push(nuxtApp.ssrContext.url);
+      router.afterEach((to) => {
+        if (to.fullPath !== nuxtApp.ssrContext.url) {
+          nuxtApp.ssrContext.res.setHeader("Location", to.fullPath);
+        }
+      });
     }
     await router.isReady();
     const is404 = router.currentRoute.value.matched.length === 0;
@@ -8498,7 +8434,7 @@ function parseURL(input = "", defaultProto) {
   if (!hasProtocol(input, true)) {
     return defaultProto ? parseURL(defaultProto + input) : parsePath(input);
   }
-  const [protocol = "", auth, hostAndPath] = (input.match(/([^:/]+:)?\/\/([^/@]+@)?(.*)/) || []).splice(1);
+  const [protocol = "", auth, hostAndPath] = (input.replace(/\\/g, "/").match(/([^:/]+:)?\/\/([^/@]+@)?(.*)/) || []).splice(1);
   const [host = "", path = ""] = (hostAndPath.match(/([^/?]*)(.*)?/) || []).splice(1);
   const { pathname, search, hash } = parsePath(path);
   return {
@@ -8726,6 +8662,9 @@ const _sfc_main$$ = {
   setup() {
     const nuxtApp = useNuxtApp();
     nuxtApp.hooks.callHookWith((hooks) => hooks.map((hook) => hook()), "vue:setup");
+    return {
+      onResolve: () => nuxtApp.callHook("app:suspense:resolve")
+    };
   }
 };
 function _sfc_ssrRender$$(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
@@ -8744,12 +8683,788 @@ _sfc_main$$.setup = (props, ctx) => {
   return _sfc_setup$$ ? _sfc_setup$$(props, ctx) : void 0;
 };
 const RootComponent = /* @__PURE__ */ _export_sfc(_sfc_main$$, [["ssrRender", _sfc_ssrRender$$]]);
-const _sfc_main$_ = {};
-function _sfc_ssrRender$_(_ctx, _push, _parent, _attrs) {
+library.add(faBars);
+const _sfc_main$_ = vue_cjs_prod.defineComponent({
+  components: {
+    FontAwesomeIcon
+  }
+});
+function _sfc_ssrRender$_(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_NuxtPage = vue_cjs_prod.resolveComponent("NuxtPage");
+  const _component_font_awesome_icon = vue_cjs_prod.resolveComponent("font-awesome-icon");
+  const _component_NuxtLink = vue_cjs_prod.resolveComponent("NuxtLink");
   _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}>`);
   _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtPage, null, null, _parent));
-  _push(`</div>`);
+  _push(`<div class="mainmenu"><input type="checkbox" id="menu"><div class="menu"><label class="menu-toggle" for="menu">`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_font_awesome_icon, { icon: "bars" }, null, _parent));
+  _push(`</label><ul><li><label for="menu-c01">Chapter 01</label><input type="checkbox" id="menu-c01"><div class="menu"><ul><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter01/0" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`01-0`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("01-0")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter01/1" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`01-1`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("01-1")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter01/2" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`01-2`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("01-2")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li></ul></div></li><li><label for="menu-c02">Chapter 02</label><input type="checkbox" id="menu-c02"><div class="menu"><ul><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter02/1" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`02-1`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("02-1")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter02/2" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`02-2`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("02-2")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter02/3" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`02-3`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("02-3")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter02/4" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`02-4`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("02-4")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter02/5" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`02-5`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("02-5")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter02/6" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`02-6`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("02-6")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter02/7" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`02-7`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("02-7")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter02/8" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`02-8`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("02-8")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter02/9" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`02-9`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("02-9")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li></ul></div></li><li><label for="menu-c03">Chapter 03</label><input type="checkbox" id="menu-c03"><div class="menu"><ul><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter03/1" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`03-1`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("03-1")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter03/2" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`03-2`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("03-2")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter03/3" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`03-3`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("03-3")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter03/4" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`03-4`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("03-4")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter03/5" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`03-5`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("03-5")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li></ul></div></li><li><label for="menu-c04">Chapter 04</label><input type="checkbox" id="menu-c04"><div class="menu"><ul><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter04/1" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`04-1`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("04-1")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter04/2" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`04-2`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("04-2")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter04/3" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`04-3`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("04-3")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter04/4" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`04-4`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("04-4")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter04/5" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`04-5`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("04-5")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter04/6" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`04-6`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("04-6")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter04/7" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`04-7`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("04-7")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter04/8" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`04-8`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("04-8")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li></ul></div></li><li><label for="menu-c05">Chapter 05</label><input type="checkbox" id="menu-c05"><div class="menu"><ul><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter05/1" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`05-1`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("05-1")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter05/2" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`05-2`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("05-2")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter05/3" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`05-3`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("05-3")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter05/4" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`05-4`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("05-4")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter05/5" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`05-5`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("05-5")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter05/6" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`05-6`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("05-6")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li></ul></div></li><li><label for="menu-c06">Chapter 06</label><input type="checkbox" id="menu-c06"><div class="menu"><ul><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter06/1" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`06-1`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("06-1")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter06/2" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`06-2`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("06-2")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter06/3" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`06-3`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("06-3")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter06/4" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`06-4`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("06-4")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li></ul></div></li><li><label for="menu-c07">Chapter 07</label><input type="checkbox" id="menu-c07"><div class="menu"><ul><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter07/1" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`07-1`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("07-1")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter07/2" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`07-2`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("07-2")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter07/3" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`07-3`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("07-3")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter07/4" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`07-4`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("07-4")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter07/5" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`07-5`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("07-5")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter07/6" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`07-6`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("07-6")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li></ul></div></li><li><label for="menu-c08">Chapter 08</label><input type="checkbox" id="menu-c08"><div class="menu"><ul><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter08/1" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`08-1`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("08-1")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter08/2" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`08-2`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("08-2")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter08/3" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`08-3`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("08-3")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter08/4" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`08-4`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("08-4")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter08/5" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`08-5`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("08-5")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter08/6" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`08-6`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("08-6")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter08/7" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`08-7`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("08-7")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li></ul></div></li><li><label for="menu-c09">Chapter 09</label><input type="checkbox" id="menu-c09"><div class="menu"><ul><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter09/1" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`09-1`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("09-1")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter09/2" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`09-2`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("09-2")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter09/3" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`09-3`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("09-3")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter09/4" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`09-4`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("09-4")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter09/5" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`09-5`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("09-5")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter09/6" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`09-6`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("09-6")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li></ul></div></li><li><label for="menu-c10">Chapter 10</label><input type="checkbox" id="menu-c10"><div class="menu"><ul><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter10/1" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`10-1`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("10-1")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter10/2" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`10-2`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("10-2")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter10/3" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`10-3`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("10-3")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter10/4" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`10-4`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("10-4")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li><li>`);
+  _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, { to: "/chapter10/5" }, {
+    default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`10-5`);
+      } else {
+        return [
+          vue_cjs_prod.createTextVNode("10-5")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</li></ul></div></li></ul></div></div></div>`);
 }
 const _sfc_setup$_ = _sfc_main$_.setup;
 _sfc_main$_.setup = (props, ctx) => {

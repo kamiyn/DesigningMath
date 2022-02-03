@@ -1,1 +1,0 @@
-import{_ as e,c as o,o as t,e as c}from"./bootstrap-10f9cadf.mjs";const s={},a=c("p",null,"Hello Nuxt3",-1),n=[a];function r(_,l){return t(),o("div",null,n)}var f=e(s,[["render",r]]);export{f as default};
